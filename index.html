@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="electrical-engineering/electrical-engineering.css">
     <title>Er.Narendra Singh</title>
 </head>
-<body>
+<body class="light-mode">
     <header id="resume-header">
         <nav>
             <div class="navbar">
@@ -21,8 +21,8 @@
                         <span class="line line2"></span>
                         <span class="line line3"></span>
                     </div>
-                    <ul id="nav-list" class="horizontal-list nav-menu">
-                        <li><a href="#resume-header">Home</a></li>
+                    <ul id="nav-list" class="nav-menu">
+                        <li><a href="#resume-header" class="scroll-links">Home</a></li>
                         <li><a href="#about" class="scroll-links">About</a></li>
                         <li><a href="#skills" class="scroll-links">Skills</a></li>
                         <li><a href="#experience" class="scroll-links">Experience</a></li>
@@ -32,20 +32,21 @@
                         <li><a href="electrical-engineering/electrical-engineering.html">Electrical Engineering</a></li>
                         <li><a href="#contact" class="scroll-links">Contact</a></li>
                     </ul>
+                    <button id="dark-mode-toggle" class="dark-mode-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
         </nav>
         <div id="social-info">
-            <div id="name-social-container">
-                <h1 id="my-name">Er. Narendra Singh</h1>
+            <div class="nav-brand">
+                <h1>Er. Narendra Singh</h1>
             </div>
-            <div>
-                <ul class="social-icons horizontal-list">
-                    <li><a href="https://www.linkedin.com/in/narendra-singh-727b511b1/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                    <li><a href="https://github.com/narendrasingh95"><i class="fa-brands fa-github"></i></a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100027620950040"><i class="fa-brands fa-facebook-f"></i></a></li>
-                </ul>
-            </div>
+            <ul class="social-icons">
+                <li><a href="https://www.linkedin.com/in/narendra-singh-727b511b1/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="https://github.com/narendrasingh95"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100027620950040"><i class="fa-brands fa-facebook-f"></i></a></li>
+            </ul>
         </div>
     </header>
     <main id="resume-content">
@@ -135,30 +136,30 @@
             <h1 class="section-heading mb75"><span><i class="fa-solid fa-briefcase"></i></span><span>Work Experience</span></h1>
             <div class="timeline">
                 <div class="timeline-box">
-                    <div class="timeline-left">
+                    <div class="timeline-content">
                         <h3>Application Engineer</h3>
                         <p class="more-left">Axcend Automation and Software Solutions Pvt. Ltd.</p>
                         <p class="space">Nov 2023 - Present</p>
+                        <p>Designed and implemented control panels and automation systems.</p>
+                        <ul>
+                            <li>Developed electrical schematics and control panel layouts using AutoCAD Electrical.</li>
+                            <li>Programmed PLCs (Siemens) and integrated SCADA (Ignition) for real-time monitoring.</li>
+                            <li>Collaborated on HMI screen designs to enhance user interaction.</li>
+                        </ul>
                     </div>
-                    <p>Designed and implemented control panels and automation systems.</p>
-                    <ul style="list-style-type: none; padding-left: 1em;">
-                        <li>★ Developed electrical schematics and control panel layouts using AutoCAD Electrical.</li>
-                        <li>★ Programmed PLCs (Siemens) and integrated SCADA (Ignition) for real-time monitoring.</li>
-                        <li>★ Collaborated on HMI screen designs to enhance user interaction.</li>
-                    </ul>
                 </div>
                 <div class="timeline-box">
-                    <div class="timeline-left">
+                    <div class="timeline-content">
                         <h3>Junior Engineer</h3>
                         <p class="more-left">Ujjawal System Pvt. Ltd.</p>
                         <p class="space">July 2023 - October 2023</p>
+                        <p>Focused on substation and switchyard design projects.</p>
+                        <ul>
+                            <li>Prepared single-line diagrams (WTP & LIS) for substations (6.6kV to 765kV) and sized equipment.</li>
+                            <li>Conducted load calculations, cable sizing, and equipment selection including transformers and relays.</li>
+                            <li>Designed WTP and LIS systems, ensuring compliance with industry standards.</li>
+                        </ul>
                     </div>
-                    <p>Focused on substation and switchyard design projects.</p>
-                    <ul style="list-style-type: none; padding-left: 1em;">
-                        <li>★ Prepared single-line diagrams ( WTP  & LIS ) for substations (6.6kV to 765kV) and sized equipment.</li>
-                        <li>★ Conducted load calculations, cable sizing, and equipment selection including transformers and relays.</li>
-                        <li>★ Designed WTP and LIS systems, ensuring compliance with industry standards.</li>
-                    </ul>
                 </div>
                 <div class="timeline-divider">
                     <div class="timeline-traveller"><i class="fa-solid fa-plane"></i></div>
@@ -168,20 +169,29 @@
         <section id="education">
             <h1 class="section-heading mb75"><span><i class="fa-solid fa-graduation-cap"></i></span><span>Education</span></h1>
             <div class="timeline">
-                <div class="timeline-box edu-logo">
-                    <div class="education-left">
-                        <h3>B.Tech in Electrical and Electronics Engineering</h3><p class="more-left-2">Dr. A.P.J. Abdul Kalam Technical University, UP</p><p class="space">July 2018 - June 2022</p>
-                    </div><p>CGPA: 7.5</p>
+                <div class="timeline-box">
+                    <div class="timeline-content">
+                        <h3>B.Tech in Electrical and Electronics Engineering</h3>
+                        <p class="more-left">Dr. A.P.J. Abdul Kalam Technical University, UP</p>
+                        <p class="space">July 2018 - June 2022</p>
+                        <p>CGPA: 7.5</p>
+                    </div>
                 </div>
-                <div class="timeline-box edu-logo">
-                    <div class="education-left">
-                        <h3>Class XII</h3><p class="more-left-2">A.S. Inter College, Fatehpur, UP</p><p class="space">July 2016 - June 2018</p>
-                    </div><p>Percentage: 65%</p>
+                <div class="timeline-box">
+                    <div class="timeline-content">
+                        <h3>Class XII</h3>
+                        <p class="more-left">A.S. Inter College, Fatehpur, UP</p>
+                        <p class="space">July 2016 - June 2018</p>
+                        <p>Percentage: 65%</p>
+                    </div>
                 </div>
-                <div class="timeline-box edu-logo">
-                    <div class="education-left">
-                        <h3>High School</h3><p class="more-left-2">Sri 108 N.N.M.J.M. Inter College, Fatehpur, UP</p><p class="space">July 2012 - June 2016</p>
-                    </div><p>Percentage: 90%</p>
+                <div class="timeline-box">
+                    <div class="timeline-content">
+                        <h3>High School</h3>
+                        <p class="more-left">Sri 108 N.N.M.J.M. Inter College, Fatehpur, UP</p>
+                        <p class="space">July 2012 - June 2016</p>
+                        <p>Percentage: 90%</p>
+                    </div>
                 </div>
                 <div class="timeline-divider edu-divider">
                     <div class="timeline-traveller"><i class="fa-solid fa-car-side"></i></div>
@@ -189,59 +199,59 @@
             </div>
         </section>
         <section id="portfolio">
-            <h1 class="section-heading mb75"><span><i class="fa-solid fa-list" id="bold"></i></span><span>Portfolio</span></h1>
+            <h1 class="section-heading mb75"><span><i class="fa-solid fa-list"></i></span><span>Portfolio</span></h1>
             <div class="portfolio-display">
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png" alt="Employee Review System">
                         <figcaption class="portfolio-details">
-                            <h3><strong>Employee Review System</strong></h3>
-                            <p style="color: #2ecc71;">A dynamic full-stack web app built with <strong>ReactJS</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong> to streamline employee performance reviews.</p>
+                            <h3>Employee Review System</h3>
+                            <p>A dynamic full-stack web app built with ReactJS, Node.js, and MongoDB to streamline employee performance reviews.</p>
                         </figcaption>
                     </figure>
                 </div>
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png" alt="To-Do App">
                         <figcaption class="portfolio-details">
-                            <h3><strong>To-Do App</strong></h3>
-                            <p style="color: #3498db;">A sleek task manager featuring <strong>add</strong> and <strong>edit</strong> functionalities, crafted with <strong>JavaScript</strong>, <strong>HTML</strong>, and <strong>CSS</strong>.</p>
+                            <h3>To-Do App</h3>
+                            <p>A sleek task manager featuring add and edit functionalities, crafted with JavaScript, HTML, and CSS.</p>
                         </figcaption>
                     </figure>
                 </div>
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png" alt="SCADA Dashboard">
                         <figcaption class="portfolio-details">
-                            <h3><strong>SCADA Dashboard</strong></h3>
-                            <p style="color: #e74c3c;">A cutting-edge prototype using <strong>Ignition SCADA</strong> for real-time industrial monitoring, developed during my training.</p>
+                            <h3>SCADA Dashboard</h3>
+                            <p>A cutting-edge prototype using Ignition SCADA for real-time industrial monitoring, developed during my training.</p>
                         </figcaption>
                     </figure>
                 </div>
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png" alt="Solar Panel Design">
                         <figcaption class="portfolio-details">
-                            <h3><strong>Solar Panel Design</strong></h3>
-                            <p style="color: #f1c40f;">An optimized simulation project using <strong>PVsyst</strong> to enhance solar energy efficiency.</p>
+                            <h3>Solar Panel Design</h3>
+                            <p>An optimized simulation project using PVsyst to enhance solar energy efficiency.</p>
                         </figcaption>
                     </figure>
                 </div>
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png" alt="Control Panel Schematic">
                         <figcaption class="portfolio-details">
-                            <h3><strong>Control Panel Schematic</strong></h3>
-                            <p style="color: #9b59b6;">A precise <strong>AutoCAD Electrical</strong> design for industrial control systems, showcasing my engineering skills.</p>
+                            <h3>Control Panel Schematic</h3>
+                            <p>A precise AutoCAD Electrical design for industrial control systems, showcasing my engineering skills.</p>
                         </figcaption>
                     </figure>
                 </div>
-                <div>
+                <div class="project-item">
                     <figure class="project-img">
                         <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png" alt="Portfolio Website">
                         <figcaption class="portfolio-details">
-                            <h3><strong>Portfolio Website</strong></h3>
-                            <p style="color: #1abc9c;">This very site! A responsive showcase of my skills and projects, built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+                            <h3>Portfolio Website</h3>
+                            <p>This very site! A responsive showcase of my skills and projects, built with HTML, CSS, and JavaScript.</p>
                         </figcaption>
                     </figure>
                 </div>
@@ -275,7 +285,7 @@
                 </div>
             </div>
             <div>
-                <ul class="social-icons horizontal-list contact-social">
+                <ul class="social-icons">
                     <li><a href="https://www.linkedin.com/in/narendra-singh-727b511b1/"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     <li><a href="https://github.com/narendrasingh95"><i class="fa-brands fa-github"></i></a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=100027620950040"><i class="fa-brands fa-facebook-f"></i></a></li>
