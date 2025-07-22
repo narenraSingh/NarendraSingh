@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <script src="https://kit.fontawesome.com/a429e5bfb6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="electrical-engineering.css">
+    <link rel="icon" type="image/png" href="https://uxwing.com/wp-content/themes/uxwing/download/44-hand-gestures/good.png">
+    <title>Electrical Engineering - Narendra Singh</title>
+</head>
+<body>
+    <header id="ee-header">
+        <div id="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div>
+        <nav id="ee-nav" class="hidden">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="electrical-calculator.html">Electrical Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="ee-content">
+        <section id="electrical-engineering">
+            <h1 class="section-heading mb75">
+                <span><i class="fa-solid fa-bolt"></i></span>
+                <span>Electrical Engineering</span>
+            </h1>
+            <div class="electrical-content">
+                <p>As an Electrical and Electronics Engineer, I specialize in designing and optimizing electrical systems. Here are some key areas of my expertise:</p>
+                <ul>
+                    <li><strong>Control Panel Design:</strong> Proficient in AutoCAD Electrical and EPLAN for creating detailed schematics and layouts.</li>
+                    <li><strong>Automation:</strong> Experienced with PLC Programming (Siemens) and SCADA systems (Ignition) for industrial automation.</li>
+                    <li><strong>Renewable Energy:</strong> Skilled in PVsyst for solar panel design and optimization.</li>
+                    <li><strong>Simulation:</strong> Used MATLAB Simulink for modeling and analyzing electrical circuits.</li>
+                </ul>
+                <p>I’ve worked on projects like SCADA dashboards and control panel designs during my training at D Hub Engineers and continue to explore innovative solutions. Contact me for consultancy or collaboration!</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger-lines");
+        const nav = document.getElementById("ee-nav");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("hidden");
+            hamburger.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

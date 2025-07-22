@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .footer img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 2px solid #3498db;
+        }
+        .footer-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-text h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        .footer-text p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        @media screen and (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer img {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="electrical-engineering.html">Electrical Engineering</a>
+    </div>
+    <h1>Unit Conversion Calculator</h1>
+    <div class="calculator">
+        <div class="input-group">
+            <label for="value">Enter Value:</label>
+            <input type="number" id="value" placeholder="Enter value" step="any">
+        </div>
+        <div class="input-group">
+            <label for="fromUnit">From Unit:</label>
+            <select id="fromUnit">
+                <option value="mm">Millimeter (mm)</option>
+                <option value="cm">Centimeter (cm)</option>
+                <option value="m">Meter (m)</option>
+                <option value="km">Kilometer (km)</option>
+                <option value="in">Inch (in)</option>
+                <option value="ft">Foot (ft)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="toUnit">To Unit:</label>
+            <select id="toUnit">
+                <option value="mm">Millimeter (mm)</option>
+                <option value="cm">Centimeter (cm)</option>
+                <option value="m">Meter (m)</option>
+                <option value="km">Kilometer (km)</option>
+                <option value="in">Inch (in)</option>
+                <option value="ft">Foot (ft)</option>
+            </select>
+        </div>
+        <button onclick="convert()">Convert</button>
+        <div id="result"></div>
+    </div>
+    <div class="footer">
+        <div id="particles-js"></div>
+        <div class="footer-content">
+            <img src="../images/_DSC3235.png" alt="Narendra Singh Profile Picture">
+            <div class="footer-text">
+                <h3>Narendra Singh</h3>
+                <p>Electrical and Electronics Engineer</p>
+                <p>4 Years of Experience</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script type="text/javascript">
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3498db"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 30,
+                        "size_min": 0.5,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 100,
+                    "color": "#3498db",
+                    "opacity": 0.8,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+            return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+                try {
+                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+
+                    // Convert sheet to JSON to filter blank rows
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                    // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                    var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                    // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                    var headerRowIndex = filteredData.findIndex((row, index) =>
+                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                    );
+                    // Fallback
+                    if (headerRowIndex === -1 || headerRowIndex > 25) {
+                        headerRowIndex = 0;
+                    }
+
+                    // Convert filtered JSON back to CSV
+                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                    return csv;
+                } catch (e) {
+                    console.error(e);
+                    return "";
+                }
+            }
+            return gk_fileData[filename] || "";
+        }
+
+        function convert() {
+            const value = parseFloat(document.getElementById('value').value);
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toUnit = document.getElementById('toUnit').value;
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(value)) {
+                resultDiv.innerHTML = "Please enter a valid number";
+                return;
+            }
+
+            // Conversion factors to meters
+            const conversions = {
+                mm: 0.001,
+                cm: 0.01,
+                m: 1,
+                km: 1000,
+                in: 0.0254,
+                ft: 0.3048
+            };
+
+            // Convert input to meters first
+            const valueInMeters = value * conversions[fromUnit];
+            // Convert from meters to target unit
+            const result = valueInMeters / conversions[toUnit];
+
+            resultDiv.innerHTML = `${value} ${fromUnit} = ${result.toFixed(4)} ${toUnit}`;
+        }
+    </script>
+</body>
+</html>
