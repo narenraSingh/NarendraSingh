@@ -1,351 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Conversion Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .calculator {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .input-group {
-            margin: 10px 0;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, button {
-            padding: 8px;
-            margin: 5px 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #000000;
-            border-radius: 8px;
-            color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .footer-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-        .footer img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-            border: 2px solid #3498db;
-        }
-        .footer-text {
-            display: flex;
-            flex-direction: column;
-        }
-        .footer-text h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #3498db;
-        }
-        .footer-text p {
-            margin: 5px 0;
-            font-size: 1rem;
-        }
-        @media screen and (max-width: 768px) {
-            .footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer img {
-                margin-bottom: 15px;
-                margin-right: 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engineering Calculators</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 40px;
+    }
+    .calculator {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+    .input-group {
+      margin: 10px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #000000;
+      border-radius: 8px;
+      color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .footer img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+      object-fit: cover;
+      border: 2px solid #3498db;
+    }
+    .footer-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-text h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #3498db;
+    }
+    .footer-text p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+      .footer, .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer img {
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="electrical-engineering.html">Electrical Engineering</a>
+  <div class="navbar">
+    <a href="../index.html">Home</a>
+    <a href="electrical-engineering.html">Electrical Engineering</a>
+  </div>
+
+  <!-- Unit Conversion Calculator -->
+  <h1>Unit Conversion Calculator</h1>
+  <div class="calculator">
+    <div class="input-group">
+      <label for="value">Enter Value:</label>
+      <input type="number" id="value" placeholder="Enter value" step="any" />
     </div>
-    <h1>Unit Conversion Calculator</h1>
-    <div class="calculator">
-        <div class="input-group">
-            <label for="value">Enter Value:</label>
-            <input type="number" id="value" placeholder="Enter value" step="any">
-        </div>
-        <div class="input-group">
-            <label for="fromUnit">From Unit:</label>
-            <select id="fromUnit">
-                <option value="mm">Millimeter (mm)</option>
-                <option value="cm">Centimeter (cm)</option>
-                <option value="m">Meter (m)</option>
-                <option value="km">Kilometer (km)</option>
-                <option value="in">Inch (in)</option>
-                <option value="ft">Foot (ft)</option>
-            </select>
-        </div>
-        <div class="input-group">
-            <label for="toUnit">To Unit:</label>
-            <select id="toUnit">
-                <option value="mm">Millimeter (mm)</option>
-                <option value="cm">Centimeter (cm)</option>
-                <option value="m">Meter (m)</option>
-                <option value="km">Kilometer (km)</option>
-                <option value="in">Inch (in)</option>
-                <option value="ft">Foot (ft)</option>
-            </select>
-        </div>
-        <button onclick="convert()">Convert</button>
-        <div id="result"></div>
+    <div class="input-group">
+      <label for="fromUnit">From Unit:</label>
+      <select id="fromUnit">
+        <option value="mm">Millimeter (mm)</option>
+        <option value="cm">Centimeter (cm)</option>
+        <option value="m">Meter (m)</option>
+        <option value="km">Kilometer (km)</option>
+        <option value="in">Inch (in)</option>
+        <option value="ft">Foot (ft)</option>
+      </select>
     </div>
-    <div class="footer">
-        <div id="particles-js"></div>
-        <div class="footer-content">
-            <img src="../images/narendra-pic.png" alt="Narendra Singh Profile Picture">
-            <div class="footer-text">
-                <h3>Narendra Singh</h3>
-                <p>Electrical and Electronics Engineer</p>
-                <p>4 Years of Experience</p>
-            </div>
-        </div>
+    <div class="input-group">
+      <label for="toUnit">To Unit:</label>
+      <select id="toUnit">
+        <option value="mm">Millimeter (mm)</option>
+        <option value="cm">Centimeter (cm)</option>
+        <option value="m">Meter (m)</option>
+        <option value="km">Kilometer (km)</option>
+        <option value="in">Inch (in)</option>
+        <option value="ft">Foot (ft)</option>
+      </select>
     </div>
+    <button onclick="convert()">Convert</button>
+    <div class="result" id="result"></div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script type="text/javascript">
-        // Initialize Particles.js
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#3498db"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 30,
-                        "size_min": 0.5,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 100,
-                    "color": "#3498db",
-                    "opacity": 0.8,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
+  <!-- Circuit Breaker Calculator -->
+  <h1>Circuit Breaker Size Calculator</h1>
+  <div class="calculator">
+    <div class="input-group">
+      <label for="cbLoad">Load (kW):</label>
+      <input type="number" id="cbLoad" placeholder="Enter load in kW" step="any">
+    </div>
+    <div class="input-group">
+      <label for="cbVoltage">Voltage (V):</label>
+      <input type="number" id="cbVoltage" placeholder="Enter voltage" step="any">
+    </div>
+    <div class="input-group">
+      <label for="cbPhase">Phase:</label>
+      <select id="cbPhase">
+        <option value="single">Single Phase</option>
+        <option value="three">Three Phase</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="cbPF">Power Factor (default 0.9):</label>
+      <input type="number" id="cbPF" value="0.9" step="any">
+    </div>
+    <div class="input-group">
+      <label for="cbSafety">Safety Factor (default 1.25):</label>
+      <input type="number" id="cbSafety" value="1.25" step="any">
+    </div>
+    <button onclick="calculateCB()">Calculate CB Size</button>
+    <div class="result" id="cbResult"></div>
+  </div>
 
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-            return cell !== '' && cell != null;
+  <!-- Transformer Calculator -->
+  <h1>Transformer Size Calculator</h1>
+  <div class="calculator">
+    <div class="input-group">
+      <label for="transLoad">Main Load (kW):</label>
+      <input type="number" id="transLoad" step="any">
+    </div>
+    <div class="input-group">
+      <label for="transVoltage">Voltage (V):</label>
+      <input type="number" id="transVoltage" step="any">
+    </div>
+    <div class="input-group">
+      <label for="transPhase">Phase:</label>
+      <select id="transPhase">
+        <option value="single">Single Phase</option>
+        <option value="three">Three Phase</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="transPF">Power Factor:</label>
+      <input type="number" id="transPF" value="0.9" step="any">
+    </div>
+    <div class="input-group">
+      <label for="transEff">Efficiency (%):</label>
+      <input type="number" id="transEff" value="95" step="any">
+    </div>
+    <div class="input-group">
+      <label for="transLF">Load Factor (0–1):</label>
+      <input type="number" id="transLF" value="0.8" step="any">
+    </div>
+    <div class="input-group">
+      <label for="auxLoad">Auxiliary Load (Optional, kW):</label>
+      <input type="number" id="auxLoad" step="any">
+    </div>
+    <button onclick="calculateTransformer()">Calculate Transformer Size</button>
+    <div class="result" id="transformerResult"></div>
+  </div>
+
+  <div class="footer">
+    <div id="particles-js"></div>
+    <div class="footer-content">
+      <img src="../images/narendra-pic.png" alt="Narendra Singh Profile Picture">
+      <div class="footer-text">
+        <h3>Narendra Singh</h3>
+        <p>Electrical and Electronics Engineer</p>
+        <p>4 Years of Experience</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // Particles
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#3498db" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 100, color: "#3498db", opacity: 0.8, width: 1 },
+        move: { enable: true, speed: 6 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 200, duration: 0.4 },
+          push: { particles_nb: 4 }
         }
-        function loadFileData(filename) {
-            if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-                try {
-                    var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                    var firstSheetName = workbook.SheetNames[0];
-                    var worksheet = workbook.Sheets[firstSheetName];
+      },
+      retina_detect: true
+    });
 
-                    // Convert sheet to JSON to filter blank rows
-                    var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                    // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                    var filteredData = jsonData.filter(row => row.some(filledCell));
+    // Unit Converter
+    function convert() {
+      const value = parseFloat(document.getElementById("value").value);
+      const fromUnit = document.getElementById("fromUnit").value;
+      const toUnit = document.getElementById("toUnit").value;
+      const resultDiv = document.getElementById("result");
 
-                    // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                    var headerRowIndex = filteredData.findIndex((row, index) =>
-                        row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                    );
-                    // Fallback
-                    if (headerRowIndex === -1 || headerRowIndex > 25) {
-                        headerRowIndex = 0;
-                    }
+      const conversions = {
+        mm: 0.001, cm: 0.01, m: 1,
+        km: 1000, in: 0.0254, ft: 0.3048
+      };
 
-                    // Convert filtered JSON back to CSV
-                    var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                    csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                    return csv;
-                } catch (e) {
-                    console.error(e);
-                    return "";
-                }
-            }
-            return gk_fileData[filename] || "";
-        }
+      if (isNaN(value)) {
+        resultDiv.innerHTML = "Please enter a valid number";
+        return;
+      }
 
-        function convert() {
-            const value = parseFloat(document.getElementById('value').value);
-            const fromUnit = document.getElementById('fromUnit').value;
-            const toUnit = document.getElementById('toUnit').value;
-            const resultDiv = document.getElementById('result');
+      const valueInMeters = value * conversions[fromUnit];
+      const result = valueInMeters / conversions[toUnit];
+      resultDiv.innerHTML = `${value} ${fromUnit} = ${result.toFixed(4)} ${toUnit}`;
+    }
 
-            if (isNaN(value)) {
-                resultDiv.innerHTML = "Please enter a valid number";
-                return;
-            }
+    // Circuit Breaker
+    function calculateCB() {
+      const loadKW = parseFloat(document.getElementById("cbLoad").value);
+      const voltage = parseFloat(document.getElementById("cbVoltage").value);
+      const phase = document.getElementById("cbPhase").value;
+      const powerFactor = parseFloat(document.getElementById("cbPF").value);
+      const safety = parseFloat(document.getElementById("cbSafety").value);
+      const resultDiv = document.getElementById("cbResult");
 
-            // Conversion factors to meters
-            const conversions = {
-                mm: 0.001,
-                cm: 0.01,
-                m: 1,
-                km: 1000,
-                in: 0.0254,
-                ft: 0.3048
-            };
+      if (isNaN(loadKW) || isNaN(voltage) || isNaN(powerFactor) || isNaN(safety)) {
+        resultDiv.innerHTML = "Please enter all required fields.";
+        return;
+      }
 
-            // Convert input to meters first
-            const valueInMeters = value * conversions[fromUnit];
-            // Convert from meters to target unit
-            const result = valueInMeters / conversions[toUnit];
+      let current = phase === "single"
+        ? (loadKW * 1000) / (voltage * powerFactor)
+        : (loadKW * 1000) / (Math.sqrt(3) * voltage * powerFactor);
 
-            resultDiv.innerHTML = `${value} ${fromUnit} = ${result.toFixed(4)} ${toUnit}`;
-        }
-    </script>
+      const cbSize = current * safety;
+      resultDiv.innerHTML = `
+        Load Current: ${current.toFixed(2)} A<br>
+        Recommended CB Size: ${cbSize.toFixed(2)} A
+      `;
+    }
+
+    // Transformer
+    function calculateTransformer() {
+      const loadKW = parseFloat(document.getElementById("transLoad").value);
+      const voltage = parseFloat(document.getElementById("transVoltage").value);
+      const phase = document.getElementById("transPhase").value;
+      const pf = parseFloat(document.getElementById("transPF").value);
+      const eff = parseFloat(document.getElementById("transEff").value) / 100;
+      const lf = parseFloat(document.getElementById("transLF").value);
+      const auxLoad = parseFloat(document.getElementById("auxLoad").value) || 0;
+      const resultDiv = document.getElementById("transformerResult");
+
+      if (isNaN(loadKW) || isNaN(voltage) || isNaN(pf) || isNaN(eff) || isNaN(lf)) {
+        resultDiv.innerHTML = "Please fill in all required fields.";
+        return;
+      }
+
+      const totalLoadKW = loadKW + auxLoad;
+
+      let current = phase === "single"
+        ? (loadKW * 1000) / (voltage * pf)
+        : (loadKW * 1000) / (Math.sqrt(3) * voltage * pf);
+
+      const kvaMain = loadKW / (eff * pf * lf);
+      const kvaTotal = totalLoadKW / (eff * pf * lf);
+
+      resultDiv.innerHTML = `
+        Load Current: ${current.toFixed(2)} A<br>
+        Transformer Size without Auxiliary Load: ${kvaMain.toFixed(2)} kVA<br>
+        Transformer Size with Auxiliary Load (${auxLoad} kW): ${kvaTotal.toFixed(2)} kVA
+      `;
+    }
+  </script>
 </body>
 </html>
