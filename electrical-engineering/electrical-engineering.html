@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="electrical-engineering.css">
     <link rel="icon" type="image/png" href="https://uxwing.com/wp-content/themes/uxwing/download/44-hand-gestures/good.png">
     <title>Electrical Engineering - Narendra Singh</title>
+    <style>
+        .faq-toggle {
+            background: none;
+            border: none;
+            color: #007BFF;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+        .faq-toggle:hover {
+            text-decoration: underline;
+        }
+        .faq-answer {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
     <header id="ee-header">
@@ -23,21 +42,34 @@
             </ul>
         </nav>
     </header>
+
     <main id="ee-content">
         <section id="electrical-engineering">
             <h1 class="section-heading mb75">
                 <span><i class="fa-solid fa-bolt"></i></span>
                 <span>Electrical Engineering</span>
             </h1>
+
             <div class="electrical-content" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <!-- Power Systems Section -->
                 <div class="power-systems" style="flex: 1; min-width: 300px;">
                     <h2>Power Systems</h2>
-                    <h3>Table of Contents</h3>
+                    <h3>Power System FAQs</h3>
                     <ul class="toc">
-                        <li><a href="#power-expertise">wWhat is Load Factor ?</a></li>
-                        <li><a href="#power-projects">What is Diversity Factor</a></li>
-                        <li><a href="#power-contact">What is Safety Factor</a></li>
+                        <li>
+                            <button class="faq-toggle">What is Load Factor?</button>
+                            <p class="faq-answer" style="display: none;">Load Factor is the ratio of actual energy used over a period of time to the maximum possible energy that could have been used in the same time.</p>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is Diversity Factor?</button>
+                            <p class="faq-answer" style="display: none;">Diversity Factor is the ratio of the sum of individual maximum demands to the maximum demand of the whole system.</p>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is Safety Factor?</button>
+                            <p class="faq-answer" style="display: none;">Safety Factor is a multiplier applied to design load to account for uncertainties.</p>
+                        </li>
                     </ul>
+
                     <h3 id="power-expertise">Areas of Expertise</h3>
                     <ul>
                         <li><strong>Renewable Energy Design</strong>: Proficient in PVsyst for designing and optimizing solar panel systems.</li>
@@ -46,13 +78,18 @@
                         <li><strong>Circuit Simulation</strong>: Used MATLAB Simulink for modeling power circuits.</li>
                         <li><strong>Grid Optimization</strong>: Knowledgeable in optimizing power distribution networks.</li>
                     </ul>
+
                     <h3 id="power-projects">Projects</h3>
                     <p>Designed solar panel layouts and simulated power distribution systems during training at D Hub Engineers.</p>
+
                     <h3 id="power-contact">Contact</h3>
                     <p>Contact me for consultancy or collaboration on power system projects!</p>
+
                     <h3>What is a Power System?</h3>
                     <p>Power systems are the backbone of electrical energy delivery, encompassing generation, transmission, and distribution. A critical component is the transformer, which adjusts voltage levels to meet load demands. Transformer kVA ratings, determined by factors like load type and capacity, ensure efficient power delivery. For example, selecting the right transformer size involves calculating the total kVA needed for residential, commercial, or industrial applications, ensuring safety and reliability in power distribution networks.</p>
                 </div>
+
+                <!-- Automation Section -->
                 <div class="automation" style="flex: 1; min-width: 300px;">
                     <h2>Automation</h2>
                     <h3>Table of Contents</h3>
@@ -61,6 +98,7 @@
                         <li><a href="#automation-projects">Projects</a></li>
                         <li><a href="#automation-contact">Contact</a></li>
                     </ul>
+
                     <h3 id="automation-expertise">Areas of Expertise</h3>
                     <ul>
                         <li><strong>Control Panel Design</strong>: Proficient in AutoCAD Electrical and EPLAN for schematics.</li>
@@ -69,24 +107,21 @@
                         <li><strong>System Integration</strong>: Expertise in integrating automation systems with existing setups.</li>
                         <li><strong>Process Optimization</strong>: Knowledgeable in improving efficiency through automation.</li>
                     </ul>
+
                     <h3 id="automation-projects">Projects</h3>
                     <p>Developed SCADA dashboards and control panel designs during training at D Hub Engineers.</p>
+
                     <h3 id="automation-contact">Contact</h3>
                     <p>Contact me for consultancy or collaboration on automation projects!</p>
+
                     <h3>What is Automation?</h3>
                     <p>Automation involves using technology to perform tasks with minimal human intervention, enhancing efficiency in industrial processes. Key components include Programmable Logic Controllers (PLCs) for controlling machinery and Supervisory Control and Data Acquisition (SCADA) systems for real-time monitoring. By integrating sensors, actuators, and control systems, automation enables precise process control, reduces errors, and optimizes operations in industries like manufacturing and energy.</p>
                 </div>
             </div>
         </section>
     </main>
-    <script>
-        const hamburger = document.getElementById("hamburger-lines");
-        const nav = document.getElementById("ee-nav");
 
-        hamburger.addEventListener("click", () => {
-            nav.classList.toggle("hidden");
-            hamburger.classList.toggle("active");
-        });
-    </script>
+    <!-- Load external JS -->
+    <script src="faq-toggle.js"></script>
 </body>
 </html>
