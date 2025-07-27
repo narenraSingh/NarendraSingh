@@ -62,6 +62,80 @@ document.addEventListener('DOMContentLoaded', function () {
         "retina_detect": true
     });
 
+    // Translation data (placeholder; replace with actual translations or API)
+    const translations = {
+        1: {
+            hindi: `मुझे तसल्ली दे दे जो <br>
+                    वो शब्द उधारा ढूँढ रहा है <br>
+                    एक सितारा ढूँढ रहा है <br>
+                    दिल सैयारा ढूँढ रहा है <br>
+                    सैयारा मतलब__वो तारा जो <br>
+                    एक जगह पे ना ठहरे <br>
+                    फिर भी अपनी चमक ना बदले,चाल ना बदले <br>
+                    और ना बदले वो चेहरे <br>
+                    अम्बर जैसा एक समुद्र <br>
+                    चाँद है, कश्ती पानी में <br>
+                    देखो जोर जवानी में <br>
+                    एक किनारा ढूँढ रहा है <br>
+                    दिल सैयारा ढूँढ रहा है <br>
+                    #सैयारा___❤✨`,
+            english: `Give me the solace that <br>
+                      I’m searching for that borrowed word <br>
+                      I’m searching for a star <br>
+                      My heart is searching for a Sayyara <br>
+                      Sayyara means—that star which <br>
+                      Doesn’t stay in one place <br>
+                      Yet never changes its shine, its pace <br>
+                      Nor changes those faces <br>
+                      A sea like the sky <br>
+                      The moon is there, the boat in water <br>
+                      Look, in the vigor of youth <br>
+                      I’m searching for a shore <br>
+                      My heart is searching for a Sayyara <br>
+                      #Sayyara___❤✨`
+        },
+        2: {
+            hindi: `Ye ek udaharan hai shayari ka,<br>
+                    Har pankti mein chhupi hai baat,<br>
+                    Jazbaat ka hai yeh izhaar,<br>
+                    Zindagi ka hai yeh ek rangat.`,
+            english: `This is an example of shayari,<br>
+                      A message hidden in every line,<br>
+                      It’s an expression of emotions,<br>
+                      A hue of life.`
+        },
+        // Add translations for Shayari 3 to 100 here
+        100: {
+            hindi: `Ye ek udaharan hai shayari ka,<br>
+                    Har pankti mein chhupi hai baat,<br>
+                    Jazbaat ka hai yeh izhaar,<br>
+                    Zindagi ka hai yeh ek rangat.`,
+            english: `This is an example of shayari,<br>
+                      A message hidden in every line,<br>
+                      It’s an expression of emotions,<br>
+                      A hue of life.`
+        }
+    };
+
+    // Translate button functionality
+    const translateBtn = document.getElementById("translateBtn");
+    translateBtn.addEventListener("click", function() {
+        const shayariBoxes = document.querySelectorAll(".shayari-box");
+        const isHindi = shayariBoxes[0].getAttribute("data-lang") === "hindi";
+        
+        shayariBoxes.forEach((box, index) => {
+            const shayariNumber = index + 1;
+            const p = box.querySelector("p");
+            if (translations[shayariNumber]) {
+                p.innerHTML = `<strong>Shayari ${shayariNumber}:</strong><br>` + 
+                             (isHindi ? translations[shayariNumber].english : translations[shayariNumber].hindi);
+                box.setAttribute("data-lang", isHindi ? "english" : "hindi");
+            }
+        });
+
+        translateBtn.textContent = isHindi ? "Translate to Hindi" : "Translate to English";
+    });
+
     // Hamburger menu toggle
     const hamburger = document.getElementById("hamburger-lines");
     const popupNav = document.getElementById("popup-nav");

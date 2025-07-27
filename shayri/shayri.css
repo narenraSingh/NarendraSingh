@@ -13,7 +13,7 @@ canvas {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f5f5f5, #e0e0e0), url('https://www.transparenttextures.com/patterns/paper.png'); /* Restored: Sketch-type paper texture */
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0), url('https://www.transparenttextures.com/patterns/paper.png');
     background-blend-mode: overlay;
     z-index: -1;
 }
@@ -26,7 +26,7 @@ canvas {
     left: 0;
     width: 250px;
     height: 100%;
-    background: rgba(74, 90, 106, 0.9); /* Restored: Dark slate */
+    background: rgba(74, 90, 106, 0.9);
     padding: 15px 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -87,15 +87,30 @@ canvas {
 .header-style {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Changed: Space out hamburger, title, and button */
     padding: 20px;
     color: #ffffff;
-    background: rgba(51, 51, 51, 0.8); /* Restored: Charcoal gray */
+    background: rgba(51, 51, 51, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 10;
 }
 .header-style h1 {
     margin-left: 20px;
     font-size: 2em;
+    flex-grow: 1; /* Changed: Allow title to take available space */
+}
+#translateBtn {
+    padding: 10px 20px;
+    background: rgba(139, 94, 60, 0.7); /* Matches back-btn sepia */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+#translateBtn:hover {
+    background: rgba(107, 74, 46, 1); /* Matches back-btn hover */
 }
 
 /* Section and content styles */
@@ -123,7 +138,7 @@ canvas {
 
 /* Shayari box styles */
 .shayari-box {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/pexels-padrinan-194096.jpg'); /* Changed: Feather image */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/pexels-padrinan-194096.jpg');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -143,8 +158,8 @@ canvas {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #fef9e7; /* Restored: Cream */
-    color: #1f2a44; /* Restored: Charcoal */
+    background-color: #fef9e7;
+    color: #1f2a44;
     font-size: 0.9em;
     font-weight: bold;
     width: 60px;
@@ -160,18 +175,18 @@ canvas {
     line-height: 1.6;
 }
 .shayari-box p strong {
-    color: #d1d5db; /* Restored: Light gray */
+    color: #d1d5db;
 }
 .check-link {
     display: block;
-    color: #1e40af; /* Changed: Vibrant blue for contrast */
+    color: #1e40af;
     text-decoration: none;
     font-size: 0.9em;
     margin-top: 10px;
 }
 .check-link:hover {
     text-decoration: underline;
-    color: #2563eb; /* Changed: Brighter blue */
+    color: #2563eb;
 }
 
 /* Back button */
@@ -179,7 +194,7 @@ canvas {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background: rgba(139, 94, 60, 0.7); /* Restored: Warm sepia */
+    background: rgba(139, 94, 60, 0.7);
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -188,14 +203,14 @@ canvas {
     width: fit-content;
 }
 .back-btn:hover {
-    background: rgba(107, 74, 46, 1); /* Restored: Darker sepia */
+    background: rgba(107, 74, 46, 1);
 }
 
 /* Footer styles */
 footer {
     padding: 20px;
     text-align: center;
-    background: #2d3748; /* Restored: Deep charcoal */
+    background: #2d3748;
     margin-top: 20px;
 }
 .social-icons {
@@ -211,13 +226,13 @@ footer {
     transition: color 0.3s;
 }
 .social-icons a:hover {
-    color: #d1d5db; /* Restored: Light gray */
+    color: #d1d5db;
 }
 
 /* Go to Top and Back to Bottom Buttons */
 #goTopBtn, #goBottomBtn {
     position: fixed;
-    background-color: rgba(107, 114, 128, 0.8); /* Restored: Muted sage */
+    background-color: rgba(107, 114, 128, 0.8);
     color: #ffffff;
     border: none;
     border-radius: 50%;
@@ -228,7 +243,7 @@ footer {
     transition: transform 0.3s, background-color 0.3s;
 }
 #goTopBtn:hover, #goBottomBtn:hover {
-    background-color: rgba(75, 85, 99, 1); /* Restored: Darker sage */
+    background-color: rgba(75, 85, 99, 1);
     transform: scale(1.1);
 }
 #goTopBtn {
@@ -255,5 +270,9 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 0.8em;
+    }
+    #translateBtn {
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 }
