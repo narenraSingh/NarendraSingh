@@ -194,20 +194,26 @@ body.dark-mode #dark-mode-toggle {
   position: relative;
 }
 
+/* UPDATED IMAGE SECTION */
 #my-image {
-  width: 12rem;
-  height: 12rem;
+  width: 15rem;
+  height: 15rem;
   margin: 0 auto 20px;
   overflow: hidden;
   border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  
+  /* Main fix for visibility */
+  object-fit: cover;
+  object-position: center 20%; /* Adjusted to show face */
 }
 
 #my-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 40%; /* Applied here as well to be safe */
 }
 
 .mb75 {
