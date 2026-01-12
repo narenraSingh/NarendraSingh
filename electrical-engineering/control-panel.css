@@ -1,0 +1,112 @@
+/* --- CONTROL PANEL DESIGN PAGE STYLES --- */
+
+#panel-design-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.intro-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* Knowledge Grid */
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Concept Cards */
+.concept-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid #3308d1; /* Primary theme color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(51, 8, 209, 0.12);
+}
+
+.concept-card h3 {
+    color: #3308d1;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.concept-card h3 i {
+    font-size: 1.2rem;
+}
+
+/* FAQ Grouping */
+.faq-group p {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.faq-group li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+/* Toggle Buttons */
+.concept-card .faq-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 14px 18px;
+    background: #f9f9ff;
+    border: 1px solid #eef0f7;
+    border-left: 4px solid #3308d1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.concept-card .faq-toggle:hover {
+    background: #3308d1;
+    color: #fff;
+}
+
+/* Answer Content */
+.faq-answer {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 15px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+/* Responsive Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .section-heading { font-size: 2rem; }
+    .knowledge-grid { grid-template-columns: 1fr; }
+    .concept-card { padding: 20px; }
+}
