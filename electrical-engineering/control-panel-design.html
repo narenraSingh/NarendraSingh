@@ -187,6 +187,32 @@
                         <p><strong>⭐ Scan Time :</strong>PLC scan time is the time required for a PLC to read inputs,
                             execute the program, and update outputs once.</p>
                     </div>
+                    <button class="faq-toggle">What is a Safety Relay?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>⭐ Scan Time :</strong> A Safety Relay is a certified safety control device used to
+                            monitor safety inputs and safely stop a machine when a hazardous condition occurs.
+                            It is designed to be fail-safe — meaning any fault causes the machine to stop.
+                            Why a normal relay is NOT enough
+
+                            A normal relay:
+
+                            Has single-channel input
+
+                            Cannot detect faults
+
+                            Is not safety certified
+
+                            A safety relay:
+
+                            Has dual-channel inputs
+
+                            Detects short circuits, wire breaks
+
+                            Has forced-guided contacts
+
+                            Is certified for machine safety
+                        </p>
+                    </div>
                 </div>
 
                 <div class="concept-card">
@@ -255,6 +281,81 @@
                         <p><strong>⭐ Where do you install a line reactor?</strong> “Between power supply and the VFD
                             line connector.”</p>
                     </div>
+                </div>
+                <div class="concept-card">
+                    <h3><i class="fa-solid fa-rotate"></i> Encoder & Feedback Systems</h3>
+
+                    <li>
+                        <button class="faq-toggle">Q. What is an Encoder and how does it work?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>An encoder is a feedback device used to measure position, speed, direction, or rotation
+                                of a rotating or linear object (like a motor shaft, conveyor, or actuator).
+                            </p>
+
+                            <p><b>👉 In simple words:</b> Encoder tells the control system “how much” and “how fast”
+                                something has moved.</p>
+
+                            <p><b>Types of Encoders (Basic Understanding):</b></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>1. <b>Incremental Encoder (Most Common):</b> Gives pulses when the shaft rotates.
+                                    Measures Speed, Direction, and Relative position. Loses position information if
+                                    power is OFF. Outputs Channel A, Channel B (phase shifted), and Optional Z channel.
+                                </li>
+                                <li>2. <b>Absolute Encoder:</b> Gives exact position value. Position is retained even
+                                    after power OFF. Used in precise positioning systems. Outputs Binary / Gray code /
+                                    Digital protocols (PROFIBUS, PROFINET, SSI).</li>
+                            </ol>
+
+                            <p><b>What is Encoder Feedback?</b></p>
+                            <p>Encoder feedback is the signal sent from the encoder back to the controller or drive to
+                                confirm actual motor speed, actual position, and direction of rotation. It allows
+                                <b>Closed-loop control</b> by comparing the Commanded value vs. the Actual value.</p>
+
+
+
+                            <p><b>Why Encoder Feedback is Important:</b></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>1. Accurate speed control</li>
+                                <li>2. Precise positioning</li>
+                                <li>3. Load disturbance correction</li>
+                                <li>4. Fault detection (slip, stall, overspeed)</li>
+                            </ol>
+
+                            <p><b>Encoder Signals (Incremental):</b></p>
+                            <ul style="list-style: none; padding-left: 10px;">
+                                <li>⭐ <b>Signal A:</b> Pulse train</li>
+                                <li>⭐ <b>Signal B:</b> Direction detection</li>
+                                <li>⭐ <b>Signal Z:</b> Home / reference position</li>
+                                <li>⭐ <b>+24V / 0V:</b> Encoder power</li>
+                            </ul>
+
+                            <p><b>Encoder vs Sensor (Simple Difference):</b></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Encoder</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Sensor</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Continuous feedback</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">On/Off detection</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Measures speed & position</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Detects presence only</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for motion control</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for status</td>
+                                </tr>
+                            </table>
+
+                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "An encoder is a feedback device
+                                that converts mechanical motion into electrical signals to provide position, speed, and
+                                direction information to a control system. Encoder feedback enables closed-loop
+                                control."</p>
+                        </div>
+                    </li>
                 </div>
 
                 <div class="concept-card">
