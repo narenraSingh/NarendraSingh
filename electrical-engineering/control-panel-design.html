@@ -187,6 +187,91 @@
                         <p><strong>⭐ Scan Time :</strong>PLC scan time is the time required for a PLC to read inputs,
                             execute the program, and update outputs once.</p>
                     </div>
+                    <button class="faq-toggle">What are the different types of PLC I/O?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>PLC I/O is the interface between the field and PLC. The PLC reads inputs (DI, AI) and
+                            controls outputs (DO, AO).</p>
+
+                        <p><strong>1. DI – Digital Input (Field → PLC)</strong></p>
+                        <p>DI is an ON/OFF (binary) signal sent FROM field device TO PLC. It uses voltage types
+                            like 24 VDC or 120 VAC.</p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li>Purpose: Used to sense status or condition.</li>
+                            <li>Examples: Push buttons, Limit switches, Pressure switches, and Motor
+                                feedback.</li>
+                            <li>Function: Tells PLC what is happening in the field.</li>
+                        </ol>
+                        <p class="highlight-q">Interview Line: “Digital inputs are used to read ON/OFF status
+                            from field devices.”</p>
+
+                        <p><strong>2. DO – Digital Output (PLC → Field)</strong></p>
+                        <p>DO is an ON/OFF control signal sent FROM PLC TO field device. Types include Relay
+                            (Higher loads) and Transistor (Faster switching).</p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li>Purpose: Used to switch devices ON or OFF.</li>
+                            <li>Examples: Starting motors (via contactor), Solenoid valves, and Alarm horns.
+                            </li>
+                            <li>Function: PLC controls field devices.</li>
+                        </ol>
+                        <p class="highlight-q">Interview Line: “Digital outputs are used by PLC to control
+                            ON/OFF field devices.”</p>
+
+
+
+                        <p><strong>3. AI – Analog Input (Field → PLC)</strong></p>
+                        <p>AI is a continuous signal representing process values, common signals include 4–20 mA
+                            and 0–10 V.</p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li>Why 4–20 mA: Noise immune, long distance, and wire break detection.</li>
+                            <li>Examples: Level, Pressure, Flow, and Temperature transmitters.</li>
+                            <li>Function: PLC reads process values for control and monitoring.</li>
+                        </ol>
+                        <p class="highlight-q">Interview Line: “Analog inputs are used to read continuous
+                            process values like pressure, level, and flow.”</p>
+
+                        <p><strong>4. AO – Analog Output (PLC → Field)</strong></p>
+                        <p>AO is a continuous control signal sent FROM PLC TO field device to control variables
+                            smoothly.</p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li>Purpose: Control process devices proportionally.</li>
+                            <li>Examples: VFD Speed control, Control valve position, and Setpoints.</li>
+                            <li>Function: PLC controls process variables smoothly.</li>
+                        </ol>
+                        <p class="highlight-q">Interview Line: “Analog outputs are used to send control signals
+                            like speed or valve position.”</p>
+
+
+
+                        <p><strong>🔁 Quick Comparison:</strong></p>
+                        <table
+                            style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Direction</th>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Purpose</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">AI</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Field → PLC</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Measure</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">AO</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">PLC → Field</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Control</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">DI</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Field → PLC</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Status</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">DO</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">PLC → Field</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">ON/OFF Control</td>
+                            </tr>
+                        </table>
+                    </div>
                     <button class="faq-toggle">What is a Safety Relay?</button>
                     <div class="faq-answer" style="display: none;">
                         <p><strong>⭐ Scan Time :</strong> A Safety Relay is a certified safety control device used to
@@ -251,7 +336,8 @@
                         </div>
                         <p class="highlight-q"><b>One-Line Answer:</b> “VFD is selected based on motor nameplate
                             current, supply voltage, application torque, overload capacity, control method, environment,
-                            and safety requirements.”</p>
+                            and safety requirements.”
+                        </p>
                     </div>
 
                     <button class="faq-toggle">Q2. What is a Line Connector in a Drive?</button>
@@ -309,7 +395,8 @@
                             <p><b>What is Encoder Feedback?</b></p>
                             <p>Encoder feedback is the signal sent from the encoder back to the controller or drive to
                                 confirm actual motor speed, actual position, and direction of rotation. It allows
-                                <b>Closed-loop control</b> by comparing the Commanded value vs. the Actual value.</p>
+                                <b>Closed-loop control</b> by comparing the Commanded value vs. the Actual value.
+                            </p>
 
 
 
@@ -443,7 +530,222 @@
                     </ul>
                 </div>
 
-            </div>
+                <div class="concept-card">
+                    <h3><i class="fa-solid fa-network-wired"></i> Industrial Communication Protocols</h3>
+
+                    <li>
+                        <button class="faq-toggle">Q. What is a Communication Protocol and why is it used?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>A communication protocol is a set of rules that defines how devices exchange data with
+                                each other. It defines Data format, Addressing, Speed, Error checking, and Medium
+                                (cable). Without protocols, PLCs, VFDs, SCADA, and relays cannot communicate.</p>
+
+                            <p><b>Main Types of Industrial Protocols:</b></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li><b>Serial Protocols:</b> Includes Modbus RTU and Profibus. Uses RS232 / RS485
+                                    mediums.</li>
+                                <li><b>Ethernet Protocols:</b> Includes EtherNet/IP, Profinet, and Modbus TCP. Uses
+                                    Ethernet cabling.</li>
+                                <li><b>Substation Protocols:</b> Includes IEC 61850 and IEC 104. Uses Ethernet or
+                                    Fiber optic mediums.</li>
+                            </ol>
+
+
+
+                            <p><b>Detailed Protocol Table (Very Important):</b></p>
+                            <div style="overflow-x:auto;">
+                                <table
+                                    style="width:100%; font-size: 0.8rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="border: 1px solid #ddd; padding: 5px;">Protocol</th>
+                                        <th style="border: 1px solid #ddd; padding: 5px;">Type</th>
+                                        <th style="border: 1px solid #ddd; padding: 5px;">Cable</th>
+                                        <th style="border: 1px solid #ddd; padding: 5px;">Max Distance</th>
+                                        <th style="border: 1px solid #ddd; padding: 5px;">Where Used</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Modbus RTU</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Serial</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">RS485</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">1200 m</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Meters, transmitters</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Modbus TCP</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Ethernet</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Cat5/6</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">100 m</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">SCADA, PLC</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Profibus DP</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Serial</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Twisted Pair</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">1200 m</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Siemens plants</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Profinet</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Ethernet</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Cat5/6</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">100 m</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Modern Siemens</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">EtherNet/IP</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Ethernet</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Cat5/6</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">100 m</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Rockwell systems</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">IEC 61850</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Ethernet</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Fiber</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">km</td>
+                                        <td style="border: 1px solid #ddd; padding: 5px;">Substation</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <p><b>Very Important Protocols You Must Know:</b></p>
+                            <ul style="list-style: none; padding-left: 10px;">
+                                <li>⭐ <b>Modbus:</b> Master-slave protocol; RTU (RS485) or TCP (Ethernet). Used for
+                                    Meters and SCADA.</li>
+                                <li>⭐ <b>EtherNet/IP:</b> Rockwell developer; used for PLC ↔ VFD/Remote I/O.</li>
+                                <li>⭐ <b>Profinet:</b> Siemens developer; Real-time Ethernet for PLC ↔ I/O and Drives.
+                                </li>
+                                <li>⭐ <b>OPC UA:</b> Data exchange protocol used between PLC ↔ SCADA ↔ Databases.</li>
+                                <li>⭐ <b>IEC 61850:</b> Substation standard; Relay ↔ Relay communication using fast
+                                    GOOSE messaging.</li>
+                            </ul>
+
+                            <p><b>Cable Types & Distance (Important for Interview):</b></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Cable</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Used For</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Distance</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">RS232 cable</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Serial</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">15 m</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">RS485 twisted pair</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Modbus RTU, Profibus</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">1200 m</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Cat5/6 Ethernet</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Profinet, EtherNet/IP</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">100 m</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Fiber optic</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">IEC 61850, PRP</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Kilometers</td>
+                                </tr>
+                            </table>
+
+                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "A communication protocol is a set
+                                of rules defining how industrial devices exchange data, ensuring correct addressing,
+                                speed, and error checking across Serial or Ethernet mediums."</p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="faq-toggle">Q. What is Baud Rate and how does it affect communication?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Baud rate is the number of bits transmitted per second (bps) in serial communication. It
+                                is a critical parameter for RS232, RS485, Modbus RTU, and Profibus systems.</p>
+
+                            <p><strong>1. Understanding Baud Rate:</strong></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>Higher baud rate = faster data transfer.</li>
+                                <li>Higher baud rate = shorter allowable distance.</li>
+                                <li>Higher baud rate = more noise sensitivity.</li>
+                            </ol>
+
+                            <p><strong>2. Common Baud Rates (Serial):</strong></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Baud Rate (bps)</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Where Used</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">9600</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Most common (Modbus RTU)</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">19200</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Faster Modbus</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">115200</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Advanced serial devices</td>
+                                </tr>
+                            </table>
+
+
+
+                            <p><strong>3. Communication Protocol Speeds (Summary):</strong></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li><b>Serial (Modbus RTU/Profibus):</b> Speeds range from 9.6 kbps to 12 Mbps.
+                                    Profibus can reach high speeds but distance drops to 100m.</li>
+                                <li><b>Ethernet (Profinet/EtherNet/IP):</b> Much faster, typically 100 Mbps to 1
+                                    Gbps. Used for modern PLCs and SCADA.</li>
+                                <li><b>Fieldbus (DeviceNet/CAN):</b> Speeds between 125 kbps and 500 kbps depending
+                                    on distance.</li>
+                            </ol>
+
+                            <p><strong>🟣 Profibus Speed vs Distance (Interview Favorite):</strong></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Speed</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Distance</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">9.6 kbps</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">1200 m</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">1.5 Mbps</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">200 m</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">12 Mbps</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">100 m</td>
+                                </tr>
+                            </table>
+
+                            <p><strong>Key Interview Concepts:</strong></p>
+                            <ul style="list-style: none; padding-left: 10px;">
+                                <li>⭐ <b>Why not always use max speed?</b> Higher speed reduces allowable cable length
+                                    and increases noise sensitivity.</li>
+                                <li>⭐ <b>Why Ethernet?</b> High speed, large data capacity, and easy integration with
+                                    switches.</li>
+                                <li>⭐ <b>Where is baud rate used?</b> Strictly in serial communication (RS232/485).</li>
+                            </ul>
+
+                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "Baud rate defines the
+                                bits-per-second speed in serial communication; choosing the correct rate is a balance
+                                between required data speed and the physical cable distance."</p>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="faq-toggle">Q.How many devices can be connected in Ethernet?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>In Ethernet, up to 254 devices can be connected in one subnet (255.255.255.0). But in
+                                industrial PLC networks, we usually limit it to about 50–100 devices due to
+                                communication load and scan time</p>
+                        </div>
+                    </li>
+
+                </div>
         </section>
     </main>
 
