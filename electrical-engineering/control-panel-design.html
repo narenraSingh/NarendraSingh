@@ -7,6 +7,8 @@
     <script src="https://kit.fontawesome.com/a429e5bfb6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="electrical-engineering.css">
     <link rel="stylesheet" href="control-panel.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>Control Panel Design - Narendra Singh</title>
 </head>
 
@@ -367,6 +369,143 @@
                         <p><strong>⭐ Where do you install a line reactor?</strong> “Between power supply and the VFD
                             line connector.”</p>
                     </div>
+                    <button class="faq-toggle">Q4. What is Switchgear and how is it selected for a panel?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Switchgear is an assembly of switching and protection devices used to control, protect, and
+                            isolate electrical power circuits. Its purpose is to Switch ON/OFF power, protect against
+                            faults, and isolate for maintenance.</p>
+
+                        <p><strong>1.Main Components of LV Switchgear (Panel):</strong></p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li><b>Incoming Protection:</b> MCCB / ACB or Incomer isolator.</li>
+                            <li><b>Bus System:</b> Copper/Al busbars, supports, and insulation.</li>
+                            <li><b>Outgoing Feeders:</b> MCCB / MCB, Contactor, and Overload relay.</li>
+                            <li><b>Control & Accessories:</b> Relays, CTs, Meters, Indications, and Terminals.</li>
+                        </ol>
+
+
+
+                        <p><strong>2. Types of Switchgear in Panels:</strong></p>
+                        <table
+                            style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Use Case</th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">ACB</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Main incomer (>800A)</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">MCCB</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Feeders (100–1600A)</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">MCB</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Small loads (<125A)< /td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Contactor</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Switching</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Overload Relay</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Motor overload protection</td>
+                            </tr>
+                        </table>
+
+                        <p><strong>3. How to Select Switchgear (Step-by-Step):</strong></p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li>
+                                <b>Calculate Power & Current:</b>
+                                Use the Power formula: $$kW = \frac{\sqrt{3} \times V_L \times I_L \times PF}{1000}$$
+                                and the Current formula: $$I = \frac{P}{\sqrt{3} \times V \times PF}$$
+                            </li>
+                            <li><b>Select Device Rating:</b> Ensure Load current < device rated current (e.g., 60A load
+                                    → 100A MCCB).</li>
+                            <li><b>Short-circuit Breaking Capacity:</b> Breaker must withstand panel fault level
+                                (e.g., Fault = 18kA → Select ≥ 25kA).</li>
+                            <li><b>Utilization Category:</b> Motors require AC-3, while resistive loads use AC-1.
+                            </li>
+                            <li><b>Coordination:</b> Prefer Type-2 coordination between MCCB, Contactor, and
+                                Overload.</li>
+                            <li><b>Standard Compliance:</b> Ensure compliance with IEC 60947 (switchgear) and IEC
+                                61439 (panel). [cite: 10]</li>
+                        </ol>
+
+                        <p><strong>🔢 PRACTICAL EXAMPLE (30 kW Motor):</strong></p>
+                        <ul style="list-style: none; padding-left: 10px;">
+                            <li>⭐ <b>Current:</b> ≈ 60 A</li>
+                            <li>⭐ <b>MCCB Selection:</b> 100 A, 25 kA</li>
+                            <li>⭐ <b>Contactor Selection:</b> 65 A AC-3</li>
+                            <li>⭐ <b>Overload Selection:</b> 48–65 A</li>
+                        </ul>
+
+                        <p class="highlight-q"><b>Final Interview Answer:</b> “Switchgear is the combination of
+                            breakers, contactors, busbars, and protection devices used to control and protect power
+                            circuits. Selection is based on load current, fault level, utilization category,
+                            coordination, and IEC standards compliance.”</p>
+                    </div>
+                    <button class="faq-toggle">Q5. How do you calculate Busbar size for an LV Panel?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Busbar size is calculated based on rated current, allowable current density, and
+                            temperature rise limits as per <b>IEC 61439</b>.</p>
+
+                        <p><strong>1. Step-by-Step Calculation Method:</strong></p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li><b>Calculate Load Current:</b> For 3-phase systems, use: $$I = \frac{P}{\sqrt{3}
+                                \times V \times PF \times \eta}$$
+                                <i>Example: 200 kW, 415 V → I ≈ 350 A.</i>
+                            </li>
+
+                            <li><b>Select Current Density ($J$):</b> Industry practice for copper busbars in LV
+                                panels is typically <b>1.5 A/mm²</b>.
+                                (Natural cooling: 1.2–1.6 A/mm², Forced cooling: 1.8–2 A/mm²).</li>
+
+                            <li><b>Calculate Cross-section Area ($A$):</b> $$A = \frac{I}{J}$$
+                                <i>Example: $A = \frac{350}{1.5} = 233.33 \text{ mm}^2$.</i>
+                            </li>
+
+                            <li><b>Select Standard Busbar Size:</b> Nearest standard size is <b>25 × 10 mm = 250
+                                    mm²</b>.</li>
+                        </ol>
+
+
+
+                        <p><strong>2. Verification Checks:</strong></p>
+                        <ol style="padding-left: 20px; list-style-type: decimal;">
+                            <li><b>Temperature Rise:</b> Per IEC 61439, the limit is ≤ 70 °C. If current density
+                                is ≤ 1.6 A/mm², the design is generally safe.</li>
+                            <li><b>Short-circuit Withstand:</b> Use the thermal withstand formula: $$S =
+                                \frac{I_{sc} \times \sqrt{t}}{k}$$
+                                Where $I_{sc}$ is fault current, $t$ is time (1s), and $k$ is 143 for Copper.
+                                <i>Example: 25kA fault → $S \approx 175 \text{ mm}^2$. Since 250 > 175, it is
+                                    OK.</i>
+                            </li>
+                        </ol>
+
+                        <p><strong>3. Practical Values to Remember (Interview):</strong></p>
+                        <table
+                            style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="border: 1px solid #ddd; padding: 8px;">Material</th>
+                                <th style="border: 1px solid #ddd; padding: 8px;">Current Density (Industry Avg)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Copper (Cu)</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">1.2 – 1.6 A/mm²</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Aluminum (Al)</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">0.8 – 1.0 A/mm²</td>
+                            </tr>
+                        </table>
+
+                        <p class="highlight-q"><b>Interview One-Line Answer:</b> "Busbar is sized using the current
+                            density method based on load current, then verified for temperature rise and
+                            short-circuit withstand as per IEC 61439."</p>
+                    </div>
                 </div>
                 <div class="concept-card">
                     <h3><i class="fa-solid fa-rotate"></i> Encoder & Feedback Systems</h3>
@@ -527,6 +666,75 @@
                                 <p><strong>⚠️ Never touch a braking resistor during operation.</strong></p>
                             </div>
                         </li>
+                        <button class="faq-toggle">Q5. What is Motor Duty Cycle and why is it important?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p><strong>1. Basic Definition:</strong></p>
+                            <p>Duty cycle defines how a motor operates over time, including how long it runs and how
+                                long it rests. It is the percentage of time a device operates (ON) compared to the total
+                                cycle time.</p>
+
+                            <p>$$Duty \text{ } Cycle \text{ } (\%) = \frac{\text{ON time}}{\text{Total time}} \times
+                                100$$</p>
+
+                            <p><b>Example:</b> Motor runs 6s and rests 4s (Total 10s). $$Duty = \frac{6}{10} \times 100
+                                = 60\%$$</p>
+
+                            <p><strong>2. Why Duty Cycle is Important (Industrial):</strong></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>1. <b>Heating:</b> Determines motor temperature rise and thermal insulation life.
+                                </li>
+                                <li>2. <b>Sizing:</b> Affects component sizing, VFD ratings, and Braking Resistor power.
+                                </li>
+                                <li>3. <b>PWM:</b> Used in VFD inverter switching for speed and power control.</li>
+                            </ol>
+
+
+
+                            <p><strong>3. Motor Duty Classes (IEC Standard):</strong></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Class</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Type</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Real Example</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">S1</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Continuous Duty</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Pumps, Fans</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">S2</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Short-Time Duty</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Valve Actuators</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">S3</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Intermittent Duty</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Conveyors, Presses</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">S4</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Intermittent with Starting</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Cranes, Hoists</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">S5</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Intermittent with Braking</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Elevators</td>
+                                </tr>
+                            </table>
+
+                            <p><strong>4. Duty Cycle in Braking Resistors:</strong></p>
+                            <p>Calculated for resistor selection: $$Duty = \frac{\text{Brake Time}}{\text{Brake Time} +
+                                \text{Idle Time}}$$
+                                <i>Example: Brake 5s, Idle 20s → 20% Duty.</i>
+                            </p>
+
+                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "Duty cycle is the ratio of
+                                operating time to total cycle time, expressed as a percentage, and determines the
+                                thermal loading and selection of electrical equipment."</p>
+                        </div>
                     </ul>
                 </div>
 
