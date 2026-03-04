@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <script src="https://kit.fontawesome.com/a429e5bfb6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="electrical-engineering.css">
-    <link rel="icon" type="image/png" href="https://uxwing.com/wp-content/themes/uxwing/download/44-hand-gestures/good.png">
+    <link rel="icon" type="image/png"
+        href="https://uxwing.com/wp-content/themes/uxwing/download/44-hand-gestures/good.png">
     <title>Electrical Engineering - Narendra Singh</title>
     <style>
         .faq-toggle {
@@ -18,9 +20,11 @@
             font-size: 1rem;
             padding: 5px 0;
         }
+
         .faq-toggle:hover {
             text-decoration: underline;
         }
+
         .faq-answer {
             margin-top: 5px;
             margin-bottom: 15px;
@@ -28,6 +32,7 @@
         }
     </style>
 </head>
+
 <body>
     <header id="ee-header">
         <div id="hamburger-lines">
@@ -36,12 +41,12 @@
             <span class="line line3"></span>
         </div>
         <nav id="ee-nav" class="hidden">
-    <ul class="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="electrical-calculator.html">Electrical Calculator</a></li>
-        <li><a href="control-panel-design.html">Control Panel Design</a></li>
-    </ul>
-</nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="electrical-calculator.html">Electrical Calculator</a></li>
+                <li><a href="control-panel-design.html">Control Panel Design</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main id="ee-content">
@@ -59,19 +64,122 @@
                     <ul class="toc">
                         <li>
                             <button class="faq-toggle">What is Load Factor?</button>
-                            <p class="faq-answer" style="display: none;">Load Factor is the ratio of actual energy used over a period of time to the maximum possible energy that could have been used in the same time.</p>
+                            <p class="faq-answer" style="display: none;">Load Factor is the ratio of actual energy used
+                                over a period of time to the maximum possible energy that could have been used in the
+                                same time.</p>
                         </li>
                         <li>
                             <button class="faq-toggle">What is Diversity Factor?</button>
-                            <p class="faq-answer" style="display: none;">Diversity Factor is the ratio of the sum of individual maximum demands to the maximum demand of the whole system.</p>
+                            <p class="faq-answer" style="display: none;">Diversity Factor is the ratio of the sum of
+                                individual maximum demands to the maximum demand of the whole system.</p>
                         </li>
                         <li>
                             <button class="faq-toggle">What is Safety Factor?</button>
-                            <p class="faq-answer" style="display: none;">Safety Factor is a multiplier applied to design load to account for uncertainties.</p>
+                            <p class="faq-answer" style="display: none;">Safety Factor is a multiplier applied to design
+                                load to account for uncertainties.</p>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is a Soft Starter?</button>
+                            <div class="faq-answer" style="display: none;">
+                                <p>A <b>Soft Starter</b> is an electronic device that reduces the starting current and
+                                    torque of an AC induction motor by gradually increasing the voltage during startup.
+                                </p>
+
+
+
+                                <p><b>⚡ How it Works:</b> It uses SCRs (Silicon Controlled Rectifiers) to ramp up
+                                    voltage. Once the motor reaches full speed, a bypass contactor typically closes to
+                                    save energy.</p>
+
+                                <p><b>🚀 Soft Starter vs VFD (Key Differences):</b></p>
+                                <table border="1"
+                                    style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th style="padding: 5px;">Feature</th>
+                                        <th style="padding: 5px;">Soft Starter</th>
+                                        <th style="padding: 5px;">VFD</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Speed Control</td>
+                                        <td style="padding: 5px;">❌ No (Only Start/Stop)</td>
+                                        <td style="padding: 5px;">✅ Yes (Full Control)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Cost</td>
+                                        <td style="padding: 5px;">Low</td>
+                                        <td style="padding: 5px;">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;">Primary Use</td>
+                                        <td style="padding: 5px;">Reduce Inrush Current</td>
+                                        <td style="padding: 5px;">Process Automation</td>
+                                    </tr>
+                                </table>
+
+                                <p style="margin-top: 10px;"><b>🎯 One-Line Interview Ans:</b> "A soft starter reduces
+                                    mechanical stress and starting current by ramping up voltage, but unlike a VFD, it
+                                    cannot control motor speed once the motor is running."</p>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is an SCR (Silicon Controlled Rectifier)?</button>
+                            <div class="faq-answer" style="display: none;">
+                                <p>An <b>SCR</b> is a power electronic semiconductor device used to control and switch
+                                    high voltage and high current. It acts like a controlled diode that conducts only
+                                    when the gate is triggered.</p>
+
+
+
+                                <p><b>⚡ How it Works:</b></p>
+                                <ol style="padding-left: 20px; list-style-type: decimal;">
+                                    <li>1. <b>Terminals:</b> It has three terminals: Anode (A), Cathode (K), and Gate
+                                        (G).</li>
+                                    <li>2. <b>Triggering:</b> A small pulse to the Gate turns the SCR ON.</li>
+                                    <li>3. <b>Commutation:</b> Once ON, it stays ON until the current drops to zero.
+                                    </li>
+                                </ol>
+
+                                <p><b>🚀 Why SCRs are used in Soft Starters:</b></p>
+                                <p>Soft starters use 6 SCRs (two per phase in back-to-back configuration) to reduce
+                                    starting voltage. By firing SCRs at different angles of the AC waveform, the starter
+                                    gradually increases the voltage for smooth motor acceleration.</p>
+
+                                <p><b>📊 Device Comparison:</b></p>
+                                <table border="1"
+                                    style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th style="padding: 5px;">Device</th>
+                                        <th style="padding: 5px;">Primary Use</th>
+                                        <th style="padding: 5px;">Switching Type</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;"><b>SCR</b></td>
+                                        <td style="padding: 5px;">Soft Starters, Rectifiers</td>
+                                        <td style="padding: 5px;">Unidirectional</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;"><b>TRIAC</b></td>
+                                        <td style="padding: 5px;">Light Dimmers, Small AC loads</td>
+                                        <td style="padding: 5px;">Bidirectional</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px;"><b>IGBT</b></td>
+                                        <td style="padding: 5px;">VFDs, High-speed switching</td>
+                                        <td style="padding: 5px;">High-frequency</td>
+                                    </tr>
+                                </table>
+
+                                <p style="margin-top: 10px;"><b>🎯 Interview Ans:</b> "An SCR is a high-power
+                                    semiconductor used to control AC voltage by adjusting the firing angle. While Soft
+                                    Starters use SCRs for voltage ramping, VFDs typically use IGBTs for frequency
+                                    control."</p>
+                            </div>
                         </li>
                         <li>
                             <button class="faq-toggle">What is VDF (Variable Frequency Drive?)?</button>
-                            <p class="faq-answer" style="display: none;">A VFD (Variable Frequency Drive) is an electronic device used to control the speed, torque, and direction of an AC motor by varying the frequency and voltage supplied to the motor.
+                            <p class="faq-answer" style="display: none;">A VFD (Variable Frequency Drive) is an
+                                electronic device used to control the speed, torque, and direction of an AC motor by
+                                varying the frequency and voltage supplied to the motor.
                                 <b>🧠 How a VFD Works (3 Main Stages)</b>
                                 1️.Rectifier
                                 Converts AC supply → DC
@@ -82,9 +190,9 @@
                                 3️⃣ Inverter
                                 Converts DC → Variable AC
                                 Uses IGBTs
-                                          Controls:
-                                          Frequency (speed)
-                                          Voltage (torque)
+                                Controls:
+                                Frequency (speed)
+                                Voltage (torque)
 
                             </p>
                         </li>
@@ -100,13 +208,19 @@
                     </ul>
 
                     <h3 id="power-projects">Projects</h3>
-                    <p>Designed solar panel layouts and simulated power distribution systems during training at D Hub Engineers.</p>
+                    <p>Designed solar panel layouts and simulated power distribution systems during training at D Hub
+                        Engineers.</p>
 
                     <h3 id="power-contact">Contact</h3>
                     <p>Contact me for consultancy or collaboration on power system projects!</p>
 
                     <h3>What is a Power System?</h3>
-                    <p>Power systems are the backbone of electrical energy delivery, encompassing generation, transmission, and distribution. A critical component is the transformer, which adjusts voltage levels to meet load demands. Transformer kVA ratings, determined by factors like load type and capacity, ensure efficient power delivery. For example, selecting the right transformer size involves calculating the total kVA needed for residential, commercial, or industrial applications, ensuring safety and reliability in power distribution networks.</p>
+                    <p>Power systems are the backbone of electrical energy delivery, encompassing generation,
+                        transmission, and distribution. A critical component is the transformer, which adjusts voltage
+                        levels to meet load demands. Transformer kVA ratings, determined by factors like load type and
+                        capacity, ensure efficient power delivery. For example, selecting the right transformer size
+                        involves calculating the total kVA needed for residential, commercial, or industrial
+                        applications, ensuring safety and reliability in power distribution networks.</p>
                 </div>
 
                 <!-- Automation Section -->
@@ -117,11 +231,15 @@
                         <li>
                             <button class="faq-toggle">What is MPU?</button>
                             <p class="faq-answer" style="display: none;">Microprocessor (MPU): The Powerhouse 🚀
-                               Think of the MPU as the Central Processing Unit (CPU) of a computer. It's designed for high performance and complex computing tasks.
-                               Core Function: It focuses solely on processing data.
-                               External Components: It requires external components like RAM, ROM/Flash memory, and I/O peripherals to function. These are all separate chips on the circuit board.
-                               Key Applications: Laptops, servers, high-end mobile phones, and complex industrial control systems.
-                               Operating System: Typically runs complex Operating Systems (like Windows, Linux, macOS) for general-purpose applications. 
+                                Think of the MPU as the Central Processing Unit (CPU) of a computer. It's designed for
+                                high performance and complex computing tasks.
+                                Core Function: It focuses solely on processing data.
+                                External Components: It requires external components like RAM, ROM/Flash memory, and I/O
+                                peripherals to function. These are all separate chips on the circuit board.
+                                Key Applications: Laptops, servers, high-end mobile phones, and complex industrial
+                                control systems.
+                                Operating System: Typically runs complex Operating Systems (like Windows, Linux, macOS)
+                                for general-purpose applications.
                             </p>
                         </li>
                         <li><a href="#automation-projects">PLC</a></li>
@@ -130,11 +248,15 @@
 
                     <h3 id="automation-expertise">Areas of Expertise</h3>
                     <ul>
-                        <li><strong>Control Panel Design</strong>: Proficient in AutoCAD Electrical and EPLAN for schematics.</li>
-                        <li><strong>PLC Programming</strong>: Experienced with Siemens PLCs for industrial automation.</li>
+                        <li><strong>Control Panel Design</strong>: Proficient in AutoCAD Electrical and EPLAN for
+                            schematics.</li>
+                        <li><strong>PLC Programming</strong>: Experienced with Siemens PLCs for industrial automation.
+                        </li>
                         <li><strong>SCADA Systems</strong>: Skilled in developing SCADA dashboards using Ignition.</li>
-                        <li><strong>System Integration</strong>: Expertise in integrating automation systems with existing setups.</li>
-                        <li><strong>Process Optimization</strong>: Knowledgeable in improving efficiency through automation.</li>
+                        <li><strong>System Integration</strong>: Expertise in integrating automation systems with
+                            existing setups.</li>
+                        <li><strong>Process Optimization</strong>: Knowledgeable in improving efficiency through
+                            automation.</li>
                     </ul>
 
                     <h3 id="automation-projects">Projects</h3>
@@ -144,7 +266,12 @@
                     <p>Contact me for consultancy or collaboration on automation projects!</p>
 
                     <h3>What is Automation?</h3>
-                    <p>Automation involves using technology to perform tasks with minimal human intervention, enhancing efficiency in industrial processes. Key components include Programmable Logic Controllers (PLCs) for controlling machinery and Supervisory Control and Data Acquisition (SCADA) systems for real-time monitoring. By integrating sensors, actuators, and control systems, automation enables precise process control, reduces errors, and optimizes operations in industries like manufacturing and energy.</p>
+                    <p>Automation involves using technology to perform tasks with minimal human intervention, enhancing
+                        efficiency in industrial processes. Key components include Programmable Logic Controllers (PLCs)
+                        for controlling machinery and Supervisory Control and Data Acquisition (SCADA) systems for
+                        real-time monitoring. By integrating sensors, actuators, and control systems, automation enables
+                        precise process control, reduces errors, and optimizes operations in industries like
+                        manufacturing and energy.</p>
                 </div>
             </div>
         </section>
@@ -153,4 +280,5 @@
     <!-- Load external JS -->
     <script src="faq-toggle.js"></script>
 </body>
+
 </html>
