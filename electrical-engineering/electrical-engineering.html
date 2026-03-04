@@ -126,7 +126,12 @@
                             <div class="faq-answer" style="display: none;">
                                 <p>An <b>SCR</b> is a power electronic semiconductor device used to control and switch
                                     high voltage and high current. It acts like a controlled diode that conducts only
-                                    when the gate is triggered.</p>
+                                    when the gate is triggered.
+                                    <b>Use To control and switch high voltage and high current of Soft-Starters.
+                                    Soft-Starters use 6 SCRs(2 SCR per phase) SCR behave like a diode with gate I/P that allow control of conduction.
+                                    It widely use to AC  voltage control because firing angle can adjusted to regulate output voltage.</b>
+                                
+                                </p>
 
 
 
@@ -173,6 +178,158 @@
                                     semiconductor used to control AC voltage by adjusting the firing angle. While Soft
                                     Starters use SCRs for voltage ramping, VFDs typically use IGBTs for frequency
                                     control."</p>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is a DOL Starter and how is it designed for a
+                                motor?</button>
+                            <div class="faq-answer" style="display: none;">
+                                <p>A <b>Direct-On-Line (DOL) starter</b> is the simplest motor Starter, where the
+                                    motor is directly connected to the full supply voltage through a contactor and
+                                    overload protection.
+                                    It consist of connector,overload Relay, and start/stop pushbuttons.
+                                    It is widely used for industrial motors, pumps, and fans.
+                                    When You Press Start Button ,Contactor will colose and motor is directly connected
+                                    to the supply
+                                    Voltage.This Cause Motor Draw high inrush Current(6 to 8 time full load current )
+                                    for short time untill motor not reaches
+                                    its Rated Speed.
+                                </p>
+
+                                <p><strong>1. Main Components of a DOL Starter:</strong></p>
+                                <ol style="padding-left: 20px; list-style-type: decimal;">
+                                    <li>1. <b>MCB / MCCB:</b> Protects against short-circuits and isolates the power
+                                        supply.</li>
+                                    <li>2. <b>Contactor:</b> An electrically controlled switch that connects the motor
+                                        to power.</li>
+                                    <li>3. <b>Overload Relay (OLR):</b> Trips the circuit when the motor current exceeds
+                                        its rated value.</li>
+                                    <li>4. <b>Control Elements:</b> Start Push Button (NO), Stop Push Button (NC), and
+                                        Auxiliary Contacts for the holding circuit.</li>
+                                </ol>
+
+
+
+                                <p><strong>2. Starting Characteristics (Current & Torque):</strong></p>
+                                <p>The major disadvantage of DOL is the high inrush current. The formula for starting
+                                    current is:</p>
+                                <p style="text-align: center; background: #f4f4f4; padding: 10px; border-radius: 5px;">
+                                    $$I_{start} = 6 \text{ to } 8 \times I_{rated}$$
+                                </p>
+                                <p>Starting torque is high because it is proportional to the square of the voltage: $$T
+                                    \propto V^2$$. This makes DOL ideal for pumps, compressors, and crushers.</p>
+
+                                <p><strong>3. Selection Guide (DOL vs. Star-Delta vs. VFD):</strong></p>
+                                <table border="1"
+                                    style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem;">
+                                    <tr style="background-color: #f8f9fa;">
+                                        <th>Power Limit</th>
+                                        <th>Starter Type</th>
+                                        <th>Voltage Applied</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Up to 5 HP</td>
+                                        <td><b>DOL Starter</b></td>
+                                        <td>Full Voltage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 – 15 HP</td>
+                                        <td>Star-Delta Starter</td>
+                                        <td>Reduced (1/&radic;3)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Above 15 HP</td>
+                                        <td>Soft Starter / VFD</td>
+                                        <td>Controlled Ramp</td>
+                                    </tr>
+                                </table>
+
+                                <p><strong>4. Selection Example (15 kW Motor):</strong></p>
+                                <ol style="padding-left: 20px; list-style-type: decimal;">
+                                    <li>1. <b>Current Calculation:</b> $$I = \frac{P}{\sqrt{3} \times V \times PF \times
+                                        \eta}$$</li>
+                                    <li>2. <b>Assume:</b> 415V, 0.85 PF, 0.9 Efficiency → $I \approx 28\text{ A}$.</li>
+                                    <li>3. <b>Selection:</b> Select a 32A or 40A Contactor to handle the load safely.
+                                    </li>
+                                </ol>
+
+                                <p><strong>5. Protective Functions:</strong></p>
+                                <ul style="list-style: none; padding-left: 10px;">
+                                    <li>⭐ <b>Phase Failure Relay:</b> Protects against single-phasing.</li>
+                                    <li>⭐ <b>Earth Fault Relay:</b> Protection against leakage current.</li>
+                                    <li>⭐ <b>Interlocking:</b> Prevents accidental restarts after power failure (3-Wire
+                                        Control).</li>
+                                </ul>
+
+                                <p class="highlight-q"><b>Interview One-Line Answer:</b> "A DOL starter connects a motor
+                                    directly to the grid, providing full torque but high inrush current; it is typically
+                                    used for motors up to 5 HP where the grid can handle the starting surge."</p>
+                            </div>
+                        </li>
+                        <li>
+                            <button class="faq-toggle">What is a Star–Delta Starter and why is it preferred for
+                                medium motors?</button>
+                            <div class="faq-answer" style="display: none;">
+                                <p>A <b>Star–Delta starter</b> is a motor starting technique where the motor initially
+                                    runs in a star configuration to reduce the starting current, and after a preset
+                                    time, it switches to a delta configuration to run at full voltage and rated power.
+                                    Used To reduce starting current of Induction Motor.
+                                    IM Draw 6-8 time FLC during starting,Star-Delta Reduce by 1/3.
+                                    Star-Delta Reduce the starting current of IM by starting the motor in star and when Motor acheive his rated
+                                    speed It shift to delta using Timer and interlock contactors.
+                                    Each winding now Get full line voltage for normal Operation.
+                                </p>
+
+                                <p><strong>1. Why Star–Delta is Necessary:</strong></p>
+                                <p>Starting a motor directly (DOL) causes a high inrush current ($$I_{start} = 6-8
+                                    \times I_{rated}$$), leading to voltage dips and mechanical stress. Star–Delta
+                                    reduces this starting current to approximately:</p>
+                                <p style="text-align: center; background: #f4f4f4; padding: 10px; border-radius: 5px;">
+                                    $$I_{start} = \frac{1}{3} \times I_{DOL}$$
+                                </p>
+
+
+
+                                <p><strong>2. Main Components of the Panel:</strong></p>
+                                <ol style="padding-left: 20px; list-style-type: decimal;">
+                                    <li>1. <b>MCCB / MCB:</b> Provides short-circuit protection.</li>
+                                    <li>2. <b>Three Contactors:</b> Main Contactor (KM1), Star Contactor (KM2), and
+                                        Delta Contactor (KM3).</li>
+                                    <li>3. <b>Timer:</b> Controls the precise switching time from Star to Delta once the
+                                        motor reaches ~80–90% speed.</li>
+                                    <li>4. <b>Overload Relay:</b> Protects the motor windings from continuous
+                                        overcurrent.</li>
+                                </ol>
+
+                                <p><strong>3. Working Principle (Step-by-Step):</strong></p>
+                                <ol style="padding-left: 20px; list-style-type: decimal;">
+                                    <li>1. <b>Star Mode:</b> Main and Star contactors energize. Phase voltage is reduced
+                                        ($$V_{phase} = \frac{V_{line}}{\sqrt{3}}$$), which significantly lowers the
+                                        inrush current.</li>
+                                    <li>2. <b>Transition:</b> The timer opens the Star contactor after a few seconds.
+                                    </li>
+                                    <li>3. <b>Delta Mode:</b> The Delta contactor energizes, and the motor runs at full
+                                        line voltage for rated power.</li>
+                                </ol>
+
+
+
+                                <p><strong>4. Torque and Requirements:</strong></p>
+                                <p>Since torque is proportional to the square of the voltage ($$T \propto V^2$$), the
+                                    starting torque is also reduced to $$1/3$$ of its DOL value. This makes it suitable
+                                    for medium loads like pumps, fans, and compressors.
+                                    <br><b>Requirement:</b> The motor must have <b>6 terminals</b> available (U1, V1, W1
+                                    and U2, V2, W2).
+                                </p>
+
+                                <p><strong>5. Interlocking (Critical for Safety):</strong></p>
+                                <p>To prevent a phase-to-phase short circuit, <b>Electrical and Mechanical
+                                        Interlocking</b> is used between the Star and Delta contactors to ensure they
+                                    can never close at the same time.</p>
+
+                                <p class="highlight-q"><b>Interview One-Line Answer:</b> "A Star–Delta starter reduces
+                                    the starting current to one-third of the DOL value by starting the motor in a Star
+                                    configuration and then switching to Delta once the motor is up to speed."</p>
                             </div>
                         </li>
                         <li>
