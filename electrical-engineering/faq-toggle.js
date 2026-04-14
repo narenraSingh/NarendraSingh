@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', function() {
             const answer = this.nextElementSibling;
 
-            // Toggle active class for the button (optional styling)
+            // Toggle active class for styling
             this.classList.toggle('active-toggle');
 
             // Switch visibility
@@ -48,6 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 answer.style.display = 'none';
             } else {
                 answer.style.display = 'block';
+
+                // --- CRITICAL FIX FOR DOLLAR SYMBOLS ---
+                // This tells MathJax to render the formulas inside the box you just opened.
+                // It replaces the raw code with professional symbols like In, ≤, and ×.
+                if (window.MathJax) {
+                    MathJax.typesetPromise([answer]);
+                }
             }
         });
     });

@@ -7,10 +7,20 @@
     <script src="https://kit.fontawesome.com/a429e5bfb6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="electrical-engineering.css">
     <link rel="stylesheet" href="control-panel.css">
-    
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>Control Panel Design - Narendra Singh</title>
 </head>
 
@@ -572,6 +582,47 @@
                             or 15kA.
                             4. Identify the <b>Trip Curve</b> based on inrush—using Type C for general automation and
                             Type Z for sensitive electronics.”</p>
+                    </div>
+                    <button class="faq-toggle">Q. Why is an MCB used and what is its purpose?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p>MCB (Miniature Circuit Breaker) is used to protect electrical circuits from overload and
+                            short-circuit conditions.</p>
+
+                        <p><strong>Purpose of MCB</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Overload protection:</b> Trips when current exceeds rated value</li>
+                            <li><b>Short-circuit protection:</b> Instant trip during fault</li>
+                            <li><b>Isolation:</b> Can be used as ON/OFF switch</li>
+                        </ul>
+
+
+
+                        <p><strong>Why MCB used in panel</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Protects small loads (lighting, control circuits, PLC supply)</li>
+                            <li>Fast tripping</li>
+                            <li>Reusable (no replacement like fuse)</li>
+                            <li>Compact & reliable</li>
+                        </ul>
+
+                        <p><strong>Where used</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Control circuits</li>
+                            <li>SMPS / PLC supply</li>
+                            <li>Small feeders</li>
+                            <li>Lighting DB</li>
+                        </ul>
+
+                        <p><strong>Key features</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Thermal trip (overload)</li>
+                            <li>Magnetic trip (short circuit)</li>
+                            <li>Available in B, C, D curve</li>
+                        </ul>
+
+                        <p class="highlight-q"><b>Interview one-line answer:</b> “MCB is used to protect circuits from
+                            overload and short-circuit and is commonly used for control and small power circuits due to
+                            its fast and reliable operation.”</p>
                     </div>
 
                     <button class="faq-toggle">Q3. What is a dv/dt Filter?</button>
@@ -1173,6 +1224,700 @@
                     </li>
 
                 </div>
+                <div class="concept-card full-width-card" style="text-align: left;">
+                    <h3 style="text-align: left;"><i class="fa-solid fa-bolt-lightning"></i> HCL
+                        (interview answer)</h3>
+
+                    <div class="faq-group">
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. Why is an MCB used and what
+                            is its purpose?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>MCB (Miniature Circuit Breaker) is used to protect electrical circuits from overload and
+                                short-circuit conditions.</p>
+
+                            <p><strong>Purpose of MCB</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>Overload protection:</b> Trips when current exceeds
+                                    rated value</li>
+                                <li style="text-align: left;"><b>Short-circuit protection:</b> Instant trip during fault
+                                </li>
+                                <li style="text-align: left;"><b>Isolation:</b> Can be used as ON/OFF switch</li>
+                            </ul>
+
+
+                            <p><strong>Why MCB used in panel</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Protects small loads (lighting, control circuits, PLC
+                                    supply)</li>
+                                <li style="text-align: left;">Fast tripping</li>
+                                <li style="text-align: left;">Reusable (no replacement like fuse)</li>
+                                <li style="text-align: left;">Compact & reliable</li>
+                            </ul>
+
+                            <p><strong>Where used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Control circuits</li>
+                                <li style="text-align: left;">SMPS / PLC supply</li>
+                                <li style="text-align: left;">Small feeders</li>
+                                <li style="text-align: left;">Lighting DB</li>
+                            </ul>
+
+                            <p><strong>Key features</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Thermal trip (overload)</li>
+                                <li style="text-align: left;">Magnetic trip (short circuit)</li>
+                                <li style="text-align: left;">Available in B, C, D curve</li>
+                            </ul>
+
+                            <p style="text-align: left;"><b>Interview one-line answer:</b> “MCB is used to protect
+                                circuits from overload and short-circuit and is commonly used for control and small
+                                power circuits due to its fast and reliable operation.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you select an MCB
+                            and what are the trip curves?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>MCB is selected based on load current, breaking capacity, tripping curve, voltage rating,
+                                and application type.</p>
+
+                            <p><strong>Main selection factors</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>1. Load current ($I_n$):</b> Based on connected load.
+                                    Rule: $I_n \geq$ load current. Example: 10 A load → select 16 A MCB.</li>
+                                <li style="text-align: left;"><b>2. Breaking capacity (kA):</b> Must be higher than
+                                    fault level. Example: Fault = 6 kA → select 10 kA MCB.</li>
+                                <li style="text-align: left;"><b>3. Tripping curve:</b> Selected based on inrush current
+                                    (B, C, D, K, Z).</li>
+                                <li style="text-align: left;"><b>4. Voltage rating:</b> Must match system voltage
+                                    (Typically 240/415 V).</li>
+                                <li style="text-align: left;"><b>5. Number of poles:</b> 1P, 2P, 3P, 4P based on system
+                                    phase.</li>
+                                <li style="text-align: left;"><b>6. Application:</b> Control circuit → B curve; Motor →
+                                    C/D curve; PLC → B/Z curve.</li>
+                            </ul>
+
+                            <p style="text-align: left;"><b>Interview one-line answer:</b> “MCB is selected based on
+                                load current, breaking capacity, tripping curve, voltage rating, and application to
+                                ensure proper protection against overload and short-circuit.”</p>
+
+                            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                            <p><strong>MCB Curve – interview answer</strong></p>
+                            <p>MCB curve defines the tripping characteristics of an MCB based on how much current it can
+                                handle before tripping instantly.</p>
+
+
+
+                            <p><strong>Types of MCB curves and Applications</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>🔹 B Curve:</b> Trips at 3–5 $\times$ rated current.
+                                    Used for: Lighting, Resistive loads.</li>
+                                <li style="text-align: left;"><b>🔹 C Curve:</b> Trips at 5–10 $\times$ rated current.
+                                    Used for: Motors, General industrial loads (Most common).</li>
+                                <li style="text-align: left;"><b>🔹 D Curve:</b> Trips at 10–20 $\times$ rated current.
+                                    Used for: Transformers, Heavy motors, High inrush loads.</li>
+                                <li style="text-align: left;"><b>🔹 K Curve:</b> Trips at 8–12 $\times$ rated current.
+                                    Used for: Sensitive inductive loads and high-torque motors to prevent nuisance
+                                    tripping.</li>
+                                <li style="text-align: left;"><b>🔹 Z Curve:</b> Trips at 2–3 $\times$ rated current.
+                                    Used for: Highly sensitive electronics, Semiconductors, and PLC I/O cards.</li>
+                            </ul>
+
+                            <p><strong>Why curves needed</strong></p>
+                            <p>Different loads have different starting currents:</p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Low inrush → B curve</li>
+                                <li style="text-align: left;">Medium inrush → C curve</li>
+                                <li style="text-align: left;">High inrush → D/K curve</li>
+                            </ul>
+
+                            <p style="text-align: left;"><b>Interview one-line answer:</b> “MCB tripping curve defines
+                                its instantaneous trip range, where B curve is for resistive loads, C curve for general
+                                loads, and D curve for high inrush applications like motors and transformers.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is the main difference
+                            between an MCB and an MCCB?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>MCB is used for small current circuits, while MCCB is used for higher current and
+                                industrial applications with adjustable protection.</p>
+
+                            <p><strong>Key differences</strong></p>
+                            <div style="overflow-x: auto;">
+                                <table border="1"
+                                    style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; text-align: left;">
+                                    <thead>
+                                        <tr style="background-color: #f2f2f2;">
+                                            <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
+                                            <th style="padding: 8px; border: 1px solid #ddd;">MCB</th>
+                                            <th style="padding: 8px; border: 1px solid #ddd;">MCCB</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Full form</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Miniature Circuit Breaker
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Molded Case Circuit
+                                                Breaker</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Current range</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Up to 125 A</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">100 A to 1600 A+</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Breaking capacity</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Low (6–10 kA)</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">High (25–100 kA)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Trip setting</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Fixed</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Adjustable</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Application</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Domestic / control</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Industrial / power</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Size</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Small</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Larger</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Cost</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Low</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Higher</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+                            <p><strong>Protection</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">MCB → overload + short circuit (fixed)</li>
+                                <li style="text-align: left;">MCCB → overload + short circuit + adjustable settings</li>
+                            </ul>
+
+                            <p><strong>Where used</strong></p>
+                            <p><strong>MCB</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Lighting</li>
+                                <li style="text-align: left;">PLC supply</li>
+                                <li style="text-align: left;">Small loads</li>
+                            </ul>
+
+                            <p><strong>MCCB</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Motor feeders</li>
+                                <li style="text-align: left;">Incomer</li>
+                                <li style="text-align: left;">Distribution panels</li>
+                            </ul>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is an MPCB and how is
+                            it selected for a motor?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>MPCB (Motor Protection Circuit Breaker) is a device used for motor protection that
+                                combines short-circuit, overload, and phase failure protection in a single unit.</p>
+
+                            <p><strong>🔹 Functions of MPCB</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Short-circuit protection (magnetic trip)</li>
+                                <li style="text-align: left;">Overload protection (thermal adjustable)</li>
+                                <li style="text-align: left;">Phase loss / phase imbalance protection</li>
+                                <li style="text-align: left;">Manual ON/OFF switching</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Why MPCB used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Replaces MCB/MCCB + OLR</li>
+                                <li style="text-align: left;">Compact and simple wiring</li>
+                                <li style="text-align: left;">Specifically designed for motors</li>
+                            </ul>
+
+                            <p><strong>🔹 Selection of MPCB</strong></p>
+                            <p>Based on motor full load current (FLC). Example: Motor FLC = 12 A → Select MPCB range =
+                                10–16 A.</p>
+
+                            <p><strong>🔹 Key features</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Adjustable current setting</li>
+                                <li style="text-align: left;">Trip class (Class 10 / 20)</li>
+                                <li style="text-align: left;">High breaking capacity</li>
+                                <li style="text-align: left;">Compact size</li>
+                            </ul>
+
+                            <p><strong>🔹 Where used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">DOL starters</li>
+                                <li style="text-align: left;">Small motor feeders</li>
+                                <li style="text-align: left;">MCC panels</li>
+                            </ul>
+
+                            <p><strong>🔹 MPCB vs MCCB</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; text-align: left;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">MPCB</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">MCCB</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Application</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Motor-specific</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">General protection</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Overload</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Adjustable</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Limited adjustment</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Phase Protection</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Yes (Phase failure)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">No phase protection</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “MPCB is
+                                a motor protection device that provides short-circuit, overload, and phase failure
+                                protection in a single unit and is selected based on motor full load current.”</p>
+
+                            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+                            <h3 style="text-align: left;"><i class="fa-solid fa-toggle-on"></i> Contactor Selection
+                                Factors – interview answer</h3>
+                            <p>Contactor is selected based on load current, utilization category, voltage, duty cycle,
+                                and application type.</p>
+
+                            <p><strong>🔹 Main selection factors</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>1️⃣ Load current:</b> Based on motor FLC or load
+                                    current. Rule: Contactor current $\geq$ 1.2–1.5 $\times$ load current.</li>
+                                <li style="text-align: left;"><b>2️⃣ Utilization category:</b>
+                                    <br>🔹 AC-1: Resistive load (Heaters)
+                                    <br>🔹 AC-3: Motor (Most common - standard starting)
+                                    <br>🔹 AC-4: Frequent start/stop, jogging
+                                </li>
+                                <li style="text-align: left;"><b>3️⃣ Voltage rating:</b> Must match system voltage
+                                    (e.g., 415 V).</li>
+                                <li style="text-align: left;"><b>4️⃣ Coil voltage:</b> Based on control supply (24 VDC
+                                    for PLC panels, 110/230 VAC).</li>
+                                <li style="text-align: left;"><b>5️⃣ Number of poles:</b> 3P for 3-phase motors.</li>
+                                <li style="text-align: left;"><b>6️⃣ Duty / operation:</b> Frequent switching requires a
+                                    higher rating.</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Example</strong></p>
+                            <p>Motor: 15 kW ($\approx$30 A) → Selection: Contactor: 40 A, AC-3; Coil: 24 VDC.</p>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b>
+                                “Contactor is selected based on load current, utilization category (AC-3 for motors),
+                                voltage, coil voltage, and operating duty to ensure reliable switching.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a PT100 and how
+                            does it measure temperature?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>PT100 is a type of RTD (Resistance Temperature Detector) whose resistance is 100 ohms at
+                                0°C.</p>
+
+                            <p><strong>🔹 Working principle</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Based on change in resistance with temperature</li>
+                                <li style="text-align: left;">As temperature increases → resistance increases</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Key values</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">At 0°C → 100 Ω</li>
+                                <li style="text-align: left;">At 100°C → ~138.5 Ω</li>
+                            </ul>
+
+                            <p><strong>🔹 Material</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Made of Platinum (Pt)</li>
+                                <li style="text-align: left;">High accuracy & stability</li>
+                            </ul>
+
+                            <p><strong>🔹 Types of wiring</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">2-wire (less accurate)</li>
+                                <li style="text-align: left;">3-wire (most common)</li>
+                                <li style="text-align: left;">4-wire (high accuracy)</li>
+                            </ul>
+
+                            <p><strong>🔹 Why PT100 used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">High accuracy</li>
+                                <li style="text-align: left;">Stable measurement</li>
+                                <li style="text-align: left;">Wide temperature range</li>
+                            </ul>
+
+                            <p><strong>🔹 Temperature range</strong></p>
+                            <p>Typically: -200°C to +600°C</p>
+
+                            <p><strong>🔹 Where used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Industrial process</li>
+                                <li style="text-align: left;">HVAC</li>
+                                <li style="text-align: left;">Boilers</li>
+                                <li style="text-align: left;">Control panels</li>
+                            </ul>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “PT100
+                                is a platinum RTD sensor with 100 ohms resistance at 0°C, used for accurate temperature
+                                measurement based on resistance variation.”</p>
+
+                            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+                            <h3 style="text-align: left;"><i class="fa-solid fa-fire-flame-curved"></i> Thermocouple –
+                                interview answer</h3>
+                            <p>A thermocouple is a temperature sensor made of two dissimilar metals that generates a
+                                voltage when there is a temperature difference (Seebeck effect).</p>
+
+                            <p><strong>🔹 Working principle</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Two different metals joined at one end (hot junction)</li>
+                                <li style="text-align: left;">Temperature difference between hot & cold junction →
+                                    generates millivolt signal</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Output</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Very small voltage (mV)</li>
+                                <li style="text-align: left;">Requires transmitter or PLC TC module</li>
+                            </ul>
+
+                            <p><strong>🔹 Common types</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; text-align: left;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Type</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Range</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Use</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Type K</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">-200 to 1200°C</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">General industrial</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Type J</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">0 to 750°C</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Medium temp</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Type T</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">-200 to 350°C</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Low temp</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p><strong>🔹 Features</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Wide temperature range</li>
+                                <li style="text-align: left;">Fast response</li>
+                                <li style="text-align: left;">Rugged</li>
+                                <li style="text-align: left;">Less accurate than RTD</li>
+                            </ul>
+
+                            <p><strong>🔹 Thermocouple vs PT100</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; text-align: left;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Thermocouple</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">PT100</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Output</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">mV output</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Resistance output</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Accuracy</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Lower</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">High accuracy</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Range</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Wide range</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Stable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p><strong>🔹 Applications</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Furnaces</li>
+                                <li style="text-align: left;">Boilers</li>
+                                <li style="text-align: left;">High-temperature processes</li>
+                            </ul>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “A
+                                thermocouple is a temperature sensor that works on Seebeck effect, generating a
+                                millivolt signal due to temperature difference between two dissimilar metals.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a Transmitter and
+                            which PLC I/O card does it connect to?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p><strong>🔹 What is a Transmitter?</strong></p>
+                            <p>A transmitter is a device that converts a physical parameter (temperature, pressure,
+                                flow, level) into a standard electrical signal like $4–20\text{ mA}$ or $0–10\text{ V}$.
+                            </p>
+
+                            <p><b>Example:</b></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Temperature → $4–20\text{ mA}$</li>
+                                <li style="text-align: left;">Pressure → $4–20\text{ mA}$</li>
+                                <li style="text-align: left;">👉 Used for PLC monitoring.</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 What kind of I/O card is used?</strong></p>
+                            <p>Transmitters are connected to the <b>Analog Input (AI)</b> card of a PLC.</p>
+
+                            <p><strong>🔹 Why AI card?</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Transmitter gives a continuous signal.</li>
+                                <li style="text-align: left;">AI card reads: $4–20\text{ mA}$ or $0–10\text{ V}$.</li>
+                            </ul>
+
+                            <p><strong>🔹 Example connection</strong></p>
+                            <p>Pressure transmitter → $4–20\text{ mA}$ → PLC AI module.</p>
+
+                            <p><strong>🔹 Special cases</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Smart transmitter (HART) → AI + HART module.</li>
+                                <li style="text-align: left;">If transmitter gives digital output → DI (rare).</li>
+                            </ul>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “A
+                                transmitter converts physical parameters into signals like $4–20\text{ mA}$, and it is
+                                connected to a PLC Analog Input (AI) card for measurement and monitoring.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a BAS and how is it
+                            applied in Data Centers and Industry?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>BAS (Building Automation System) is a centralized system used to monitor and control
+                                building services like HVAC, lighting, and utilities.</p>
+
+                            <p><strong>🔹 What BAS controls</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">HVAC (AHU, chiller, ventilation)</li>
+                                <li style="text-align: left;">Lighting and Energy monitoring</li>
+                                <li style="text-align: left;">Fire alarm and Security system integration</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Main components</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Controllers: PLC or DDC (Direct Digital Control)</li>
+                                <li style="text-align: left;">Field Devices: Sensors (temp, pressure) and Actuators
+                                    (valves, dampers)</li>
+                                <li style="text-align: left;">HMI / SCADA for operator monitoring</li>
+                                <li style="text-align: left;">Network: Protocols like BACnet or Modbus</li>
+                            </ul>
+
+                            <p><strong>🔹 Specialized Industrial Applications</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>Data Center Projects:</b> Critical HVAC and environment
+                                    control to maintain server temperatures. Uses redundant PLC architectures like the
+                                    1756 series for 24/7 reliability.</li>
+                                <li style="text-align: left;"><b>Wastewater Management:</b> Automation of pumps, level
+                                    sensors, and flow meters using 4–20 mA signals to ensure efficient treatment and
+                                    utility water management.</li>
+                                <li style="text-align: left;"><b>Industrial Automation:</b> Centralized control of AHU
+                                    and Chiller plants for manufacturing facilities and Special Purpose Machines (SPM).
+                                </li>
+                            </ul>
+
+                            <p><strong>🔹 Benefits</strong></p>
+                            <p>Energy saving, central monitoring, improved comfort, and full automation.</p>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “BAS is
+                                a centralized automation system used to monitor and control building services like HVAC,
+                                lighting, and energy systems for efficiency and comfort.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is an SPM and how does
+                            it differ from standard machinery?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>A Special Purpose Machine (SPM) is a custom-designed machine built to perform a specific
+                                task or operation that standard machines cannot handle.</p>
+
+                            <p><strong>🔹 Purpose</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">High productivity</li>
+                                <li style="text-align: left;">Automation of specific process</li>
+                                <li style="text-align: left;">Reduce manual work</li>
+                                <li style="text-align: left;">Improve accuracy</li>
+                            </ul>
+
+
+
+                            <p><strong>🔹 Features</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Designed for one specific application</li>
+                                <li style="text-align: left;">High efficiency</li>
+                                <li style="text-align: left;">Automated operation</li>
+                                <li style="text-align: left;">Integrated with PLC / sensors / actuators</li>
+                            </ul>
+
+                            <p><strong>🔹 Components</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">PLC / controller (e.g., Rockwell 1756 series)</li>
+                                <li style="text-align: left;">Sensors (proximity, photo)</li>
+                                <li style="text-align: left;">Actuators (pneumatic cylinders, motors)</li>
+                                <li style="text-align: left;">VFD / servo drives for precise motion</li>
+                                <li style="text-align: left;">HMI and Control panel</li>
+                            </ul>
+
+                            <p><strong>🔹 Examples</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Assembly machines</li>
+                                <li style="text-align: left;">Packaging machines</li>
+                                <li style="text-align: left;">Drilling / tapping machines</li>
+                                <li style="text-align: left;">Pick & place systems</li>
+                            </ul>
+
+                            <p><strong>🔹 Where used</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">Automotive industry</li>
+                                <li style="text-align: left;">Manufacturing plants</li>
+                                <li style="text-align: left;">CNC automation</li>
+                            </ul>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “SPM is
+                                a customized automated machine designed for a specific industrial operation using PLC,
+                                sensors, actuators, and control systems to improve productivity and accuracy.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a sensor and how do
+                            you choose between Inductive and Capacitive types?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>A sensor is a device that detects a physical parameter (position, temperature, pressure)
+                                and converts it into an electrical signal for PLC monitoring and control.</p>
+
+                            <p><strong>🔹 Metal vs. Non-Metal Detection</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; text-align: left;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Feature</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Inductive Proximity Sensor
+                                        </th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Capacitive Proximity Sensor
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Detection</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Detects only metal (Steel,
+                                            Aluminum, Iron)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Detects both metal and
+                                            non-metal (Plastic, Water, Wood, Glass)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Principle</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Works on electromagnetic field
+                                            (Eddy current)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Works on change in capacitance
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Key Difference</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Short range; no effect of
+                                            dust/liquid</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Slightly longer range;
+                                            sensitive to environment</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b>
+                                “Inductive sensors are used for metal detection, while capacitive sensors can detect
+                                both metal and non-metal materials based on capacitance change.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What are the different
+                            types of Level Sensors and their output signals?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>Level sensors detect or measure the level of liquids or solids in tanks and vessels.</p>
+
+                            <p><strong>🔹 1. Digital Output (Point Level - ON/OFF)</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>Usage:</b> High or Low level detection (e.g., Float
+                                    switch, Capacitive level switch).</li>
+                                <li style="text-align: left;"><b>PLC Connection:</b> Sends a $0 / 24\text{ V DC}$ signal
+                                    to the <b>Digital Input (DI)</b> card.</li>
+                            </ul>
+
+                            <p><strong>🔹 2. Analog Output (Continuous Level)</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>Usage:</b> Exact measurement (Ultrasonic, Radar,
+                                    Hydrostatic).</li>
+                                <li style="text-align: left;"><b>PLC Connection:</b> Sends a continuous $4–20\text{ mA}$
+                                    or $0–10\text{ V}$ signal to the <b>Analog Input (AI)</b> card.</li>
+                                <li style="text-align: left;"><b>Scaling Example:</b> $0\%$ level = $4\text{ mA}$;
+                                    $100\%$ level = $20\text{ mA}$.</li>
+                            </ul>
+
+
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “Level
+                                sensors provide either digital ON/OFF output for point detection or analog signals like
+                                $4–20\text{ mA}$ for continuous level measurement.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How is a standard 3-wire
+                            proximity sensor connected to a PLC?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>A proximity sensor is connected to a PLC digital input using a standard 3-wire color
+                                code:</p>
+                            <ul style="list-style-type: none; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;">🟤 <b>Brown:</b> $+24\text{V}$ (Power)</li>
+                                <li style="text-align: left;">🔵 <b>Blue:</b> $0\text{V}$ (Ground)</li>
+                                <li style="text-align: left;">⚫ <b>Black:</b> Output signal to PLC</li>
+                            </ul>
+
+                            <p><strong>🔹 PNP vs. NPN Connection</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px; text-align: left;">
+                                <li style="text-align: left;"><b>PNP Sensor:</b> Most common. Sensor gives a
+                                    $+24\text{V}$ signal to the PLC. PLC Common is connected to $0\text{V}$.</li>
+                                <li style="text-align: left;"><b>NPN Sensor:</b> Sensor gives a $0\text{V}$ signal to
+                                    the PLC. PLC Common is connected to $+24\text{V}$.</li>
+                            </ul>
+
+
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “A
+                                proximity sensor is connected using 3 wires (Brown +24V, Blue 0V, Black Signal) where
+                                PNP or NPN configuration is used based on system common.”</p>
+                        </div>
+                    </div>
+                </div>
+
         </section>
     </main>
 
