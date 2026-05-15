@@ -100,6 +100,144 @@
                                     devices and ratings without changing the schematic."</p>
                             </div>
                         </li>
+
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you manage drawing
+                            revisions and engineering changes in EPLAN?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>In EPLAN, revisions are used to track engineering changes in drawings and documentation
+                                during the project lifecycle. Revision management helps maintain version control and
+                                document history.</p>
+
+                            <p><strong>🔹 Practical Step-by-Step Process</strong></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li><b>Step 1: Enable Tracking</b> — Go to Project → Properties → Management → Revision
+                                    Tracking. Enable "Change Tracking."</li>
+                                <li><b>Step 2: Create Revision</b> — Go to Project Data → Revisions. Enter the Revision
+                                    Number (e.g., Rev-01), Date, and Description.</li>
+                                <li><b>Step 3: Modify Drawing</b> — Perform changes like adding terminals, changing
+                                    breaker ratings, or modifying wiring.</li>
+                                <li><b>Step 4: Check-in Revision</b> — Mark pages for revision. EPLAN compares the old
+                                    version with the new version.</li>
+                                <li><b>Step 5: Generate Report</b> — EPLAN automatically updates the Revision Table,
+                                    Changed Pages, and Modification History.</li>
+                            </ol>
+
+
+
+                            <p><strong>🔹 Important Terms</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Term</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Revision Index</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">The specific revision number
+                                            or letter.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Change Tracking</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">The monitoring of any
+                                            modification on a page.</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Check-in/Check-out</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Document control to lock or
+                                            unlock pages for editing.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p style="margin-top: 15px;"><strong>🔹 Why is Revision Control important?</strong></p>
+                            <p>“Revision control ensures proper engineering documentation management, traceability of
+                                changes, customer approval tracking, and prevents usage of outdated drawings during
+                                manufacturing and commissioning.”</p>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview one-line answer:</b> “In
+                                EPLAN, revisions are managed by enabling change tracking and using the
+                                check-in/check-out process to automatically update revision reports and maintain drawing
+                                traceability.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you calculate panel
+                            heat load and select a cooling system?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>This is a very important interview topic for Rockwell, Quest Global, and Automation
+                                hardware design roles.</p>
+
+                            <p><strong>1. WHY THERMAL CALCULATION IS REQUIRED?</strong></p>
+                            <p>Electrical components generate heat. Excess heat causes PLC failure, VFD trip, and
+                                reduced component life. We must maintain safe internal panel temperature.</p>
+
+                            <p><strong>2. MAIN HEAT GENERATING COMPONENTS</strong></p>
+                            <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th>Component</th>
+                                    <th>Heat Generation</th>
+                                </tr>
+                                <tr>
+                                    <td>VFD / Servo drive</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>Transformer / SMPS</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>PLC / Relay / Breaker</td>
+                                    <td>Low-medium</td>
+                                </tr>
+                            </table>
+
+                            <p><strong>3. STEP-BY-STEP THERMAL CALCULATION</strong></p>
+                            <p><b>Step 1:</b> Identify all heat sources (VFD, SMPS, PLC, etc.). Values are found in
+                                datasheets as "Watt Loss."</p>
+                            <p><b>Step 2:</b> Calculate Total Heat Load. (Example: $300 + 40 + 20 + 80 + 10 =
+                                450\text{W}$)</p>
+                            <p><b>Step 3:</b> Check Ambient Temp. If Ambient = $40^\circ\text{C}$ and Panel Max =
+                                $45^\circ\text{C}$, then $\Delta T = 5^\circ\text{C}$.</p>
+
+
+
+                            <p><strong>4. FAN SELECTION CALCULATION</strong></p>
+                            <p>For medium loads ($100\text{W}–500\text{W}$) in clean environments, use a filter fan.</p>
+                            <p style="background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                                <b>Airflow Formula:</b> $$Q = \frac{3.1 \times P}{\Delta T}$$
+                                Where $Q$ = Airflow ($\text{m}^3\text{/hr}$), $P$ = Heat loss ($\text{W}$), $\Delta T$ =
+                                Allowed temp rise.
+                            </p>
+                            <p><b>Example:</b> $Q = (3.1 \times 450) / 5 \approx 279\text{ m}^3\text{/hr}$. Select
+                                <b>$300\text{ m}^3\text{/hr}$</b> fan.
+                            </p>
+
+                            <p><strong>5. WHEN TO USE PANEL AC?</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px;">
+                                <li>Ambient temperature is high (e.g., Outdoor panels or Plant $>45^\circ\text{C}$).
+                                </li>
+                                <li>Heat load is high ($>500–700\text{W}$).</li>
+                                <li>Dusty/Contaminated environment where external air cannot enter.</li>
+                                <li>Sensitive electronics (Servo drives, IPCs) require cooling below ambient.</li>
+                            </ul>
+
+
+
+                            <p><strong>6. PANEL DESIGN PRACTICES</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px;">
+                                <li><b>Top:</b> Hot components (VFDs).</li>
+                                <li><b>Bottom:</b> Cooler components.</li>
+                                <li><b>Spacing:</b> Maintain manufacturer recommended VFD spacing.</li>
+                            </ul>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Best Professional Interview Answer:</b>
+                                “During panel thermal design, I first identify all heat-generating components and
+                                calculate total heat dissipation in watts using component datasheets. Then I evaluate
+                                ambient temperature, enclosure size, and allowable temperature rise to select suitable
+                                cooling methods such as natural ventilation, filter fans, or panel air conditioners.”
+                            </p>
+                        </div>
                     </ul>
                 </div>
 
@@ -439,60 +577,209 @@
                             Is certified for machine safety
                         </p>
                     </div>
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you select a Safety PLC
+                        for an industrial machine?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p>This is a very strong interview question because it checks safety understanding, machine
+                            automation knowledge, and practical engineering thinking.</p>
+
+                        <p><strong>BEST INTERVIEW ANSWER</strong></p>
+                        <blockquote>
+                            “Safety PLC selection depends on machine risk assessment, number of safety devices, required
+                            safety performance level, communication architecture, and future expansion requirements.
+                            First, we identify all safety functions such as emergency stops, guard door interlocks,
+                            light curtains, and safety sensors. Then we determine the required Performance Level (PL) or
+                            SIL level based on machine risk assessment. After that, we calculate the required number of
+                            safety inputs and outputs and select suitable safety PLC modules. We also consider
+                            communication protocols such as PROFIsafe or CIP Safety, diagnostics capability, redundancy,
+                            response time, network integration, and compatibility with drives or safety relays. Finally,
+                            we ensure the selected Safety PLC complies with required industrial safety standards like
+                            ISO 13849 or IEC 62061.”
+                        </blockquote>
+
+                        <p><strong>STEP-BY-STEP PRACTICAL UNDERSTANDING</strong></p>
+
+                        <p><b>1. RISK ASSESSMENT</b></p>
+                        <p>First step. We check how dangerous the machine is, injury possibility, and frequency of human
+                            exposure.</p>
+                        <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th>Machine Type</th>
+                                <th>Risk Level</th>
+                            </tr>
+                            <tr>
+                                <td>Conveyor</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Crusher</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Press machine / Robot cell</td>
+                                <td>Very high</td>
+                            </tr>
+                        </table>
+
+
+
+                        <p><b>2. DETERMINE PL OR SIL LEVEL (ISO 13849)</b></p>
+                        <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th>PL Level</th>
+                                <th>Risk Category</th>
+                            </tr>
+                            <tr>
+                                <td>PL-a</td>
+                                <td>Low</td>
+                            </tr>
+                            <tr>
+                                <td>PL-c</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>PL-d / PL-e</td>
+                                <td>High to Very High (e.g., Robot safety)</td>
+                            </tr>
+                        </table>
+
+                        <p><b>3. COUNT SAFETY I/O</b></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Inputs:</b> E-stops, Door switches, Light curtains (Single or Dual channel).</li>
+                            <li><b>Outputs:</b> Safety contactors, STO of VFD, Servo shutdown.</li>
+                        </ul>
+
+
+
+                        <p><b>4. TECHNICAL REQUIREMENTS</b></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Communication:</b> PROFIsafe, CIP Safety, or Safety over EtherCAT.</li>
+                            <li><b>Response Time:</b> High-speed machines require fast safety reaction.</li>
+                            <li><b>Redundancy:</b> Support for dual-channel safety and internal diagnostics.</li>
+                        </ul>
+
+                        <p><strong>COMMON SAFETY PLC BRANDS</strong></p>
+                        <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th>Brand</th>
+                                <th>Common Models</th>
+                            </tr>
+                            <tr>
+                                <td>Siemens</td>
+                                <td>S7-1200F / S7-1500F</td>
+                            </tr>
+                            <tr>
+                                <td>Allen Bradley</td>
+                                <td>GuardLogix</td>
+                            </tr>
+                            <tr>
+                                <td>Pilz / Sick</td>
+                                <td>PNOZmulti / Flexi Soft</td>
+                            </tr>
+                        </table>
+
+                        <p><strong>IMPORTANT INTERVIEW QUESTIONS</strong></p>
+                        <p><b>Q1. Why normal PLC cannot replace Safety PLC?</b><br>Answer: Normal PLC is not fail-safe
+                            and does not meet safety certification standards.</p>
+                        <p><b>Q2. What is dual-channel safety?</b><br>Answer: Two independent safety circuits monitored
+                            simultaneously for fault detection.</p>
+                        <p><b>Q3. What standards are used?</b><br>Answer: ISO 13849, IEC 62061, and IEC 61508.</p>
+
+                        <p style="text-align: left; margin-top: 15px;">🎯 <b>Short Professional Answer:</b> “Safety PLC
+                            is selected based on machine risk assessment, required PL/SIL level, number of safety
+                            devices, communication requirements, response time, redundancy, and compliance with safety
+                            standards.”</p>
+                    </div>
+
                 </div>
 
                 <div class="concept-card">
                     <h3><i class="fa-solid fa-circle-question"></i> IMPORTANT QUESTIONS</h3>
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you design an MCC panel
+                        from scratch?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p>This is one of the most important interview topics for Electrical Design Engineer roles at
+                            companies like Rockwell and HCL.</p>
 
-                    <button class="faq-toggle">Q1. HOW TO SELECT A VFD FOR A MOTOR?</button>
-                    <div class="faq-answer" style="display: none;">
-                        <p><strong>⭐ STEP 1: MOTOR NAMEPLATE DETAILS (MOST IMPORTANT)</strong></p>
-                        <p>Always read the motor nameplate first. Note: Power (kW/HP), Voltage (230V/415V/480V), FLA
-                            (Full Load Amps), Frequency, Speed (RPM), Power Factor, and Duty Type (S1, S4, etc.).</p>
-                        <p><strong>📌 Rule: VFD current rating ≥ Motor FLA</strong></p>
-                        <p><strong>⭐ STEP 2: SUPPLY VOLTAGE & PHASE</strong></p>
-                        <p>VFD input must match supply, output must match motor. (Example: 480V Supply -> 480V VFD).</p>
-                        <p><strong>⭐ STEP 3: APPLICATION TYPE (VERY IMPORTANT)</strong></p>
-                        <p><strong>🔹 Variable Torque (Normal Duty):</strong> Fan, Pump, Blower. (Select same kW as
-                            motor).</p>
-                        <p><strong>🔹 Constant Torque (Heavy Duty):</strong> Conveyor, Crusher, Elevator. (Select 1 size
-                            higher VFD, e.g., 7.5kW motor → 11kW VFD).</p>
-                        <p><strong>⭐ STEP 4: OVERLOAD CAPACITY</strong></p>
-                        <p>Fans/Pumps (110%-120%), Conveyors (150% for 60s), Hoists (150%-200%). If overload is high,
-                            choose Heavy Duty.</p>
-                        <p><strong>⭐ STEP 5: CONTROL METHOD</strong></p>
-                        <p>V/f Control (Basic), Sensorless Vector (Conveyor), or Closed Loop/Encoder (Crane/Elevator).
+                        <p><strong>1. WHAT IS MCC PANEL?</strong></p>
+                        <p>MCC (Motor Control Center) is a centralized panel used to control, protect, monitor, and
+                            distribute power to motors in industrial plants, water treatment, and HVAC systems.</p>
+
+                        <p><strong>2. BASIC MCC PANEL ARCHITECTURE</strong></p>
+                        <p style="text-align: center; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                            Incoming Supply → Main Incomer → Busbar → Motor Feeders → Control Section
                         </p>
-                        <p><strong>⭐ STEP 6: ENVIRONMENT & INSTALLATION</strong></p>
-                        <p>Consider Ambient temperature (40°C), IP rating (IP20/IP54), and Heat derating.</p>
-                        <p><strong>⭐ STEP 7: SAFETY & PROTECTION</strong></p>
-                        <p>Check for STO (Safe Torque Off), Overcurrent, and Earth fault protection.</p>
-                        <p><strong>⭐ STEP 8: COMMUNICATION & I/O</strong></p>
-                        <p>Digital/Analog I/O, Modbus, Profinet, or Ethernet IP.</p>
-                        <p><strong>⭐ STEP 9: ACCESSORIES</strong></p>
-                        <p>Line/Load Reactors, Braking Resistor, or EMC Filter.</p>
-                        <div style="background:#f0f0f0; padding:10px; border-radius:5px; margin:10px 0;">
-                            <strong>🔢 PRACTICAL EXAMPLE:</strong> Motor: 2.25 kW, 480V, 3-Phase, Conveyor. Selection:
-                            480V VFD, 3 kW (4 HP) Rating, Heavy Duty, Vector Control.
-                        </div>
-                        <p class="highlight-q"><b>One-Line Answer:</b> “VFD is selected based on motor nameplate
-                            current, supply voltage, application torque, overload capacity, control method, environment,
-                            and safety requirements.”
+
+
+
+                        <p><strong>3. MAIN COMPONENTS & CALCULATIONS</strong></p>
+                        <p><b>A. Incomer Sizing:</b> Calculate total load current ($I$).
+                            <br>Formula: $$I = \frac{P}{\sqrt{3} \times V \times PF}$$
+                            Example: $100\text{kW}$ at $415\text{V}, 0.8\text{ PF} \approx 174\text{A}$. Select
+                            <b>$250\text{A}$ MCCB</b> (with margin).
                         </p>
+
+                        <p><b>B. Motor Feeders:</b> Each feeder includes an MCCB/MCB (Protection), Contactor (Control),
+                            and OLR (Overload Protection). For speed control, a VFD is used.</p>
+
+                        <p><strong>4. STARTER SELECTION GUIDE</strong></p>
+                        <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 15px;">
+                            <tr style="background-color: #f2f2f2;">
+                                <th>Motor Size / Requirement</th>
+                                <th>Starter Type</th>
+                            </tr>
+                            <tr>
+                                <td>Small Motors</td>
+                                <td>DOL Starter</td>
+                            </tr>
+                            <tr>
+                                <td>Medium Motors</td>
+                                <td>Star-Delta Starter</td>
+                            </tr>
+                            <tr>
+                                <td>Speed Control Required</td>
+                                <td>VFD (Variable Frequency Drive)</td>
+                            </tr>
+                            <tr>
+                                <td>Smooth Acceleration</td>
+                                <td>Soft Starter</td>
+                            </tr>
+                        </table>
+
+
+
+                        <p><strong>5. CONTROL & AUTOMATION</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Control Voltage:</b> $24\text{VDC}$ is preferred for safety and PLC compatibility.
+                            </li>
+                            <li><b>SMPS Sizing:</b> Add all DC loads (PLC, Sensors, Relays) and add 20% margin.</li>
+                            <li><b>Cable Sizing:</b> Based on current and voltage drop ($V_d = \sqrt{3} \times I \times
+                                R \times L$).</li>
+                        </ul>
+
+                        <p><strong>6. PANEL LAYOUT & SEGREGATION</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Arrangement:</b> Top (Busbar), Middle (Feeders), Side (Cable Alley), Bottom
+                                (Terminals).</li>
+                            <li><b>Segregation:</b> Separate Power, Control, and Communication cables to reduce
+                                <b>Electrical Noise</b>.</li>
+                        </ul>
+
+
+
+                        <p><strong>7. TESTING & DOCUMENTS</strong></p>
+                        <p><b>Required Drawings:</b> Power/Control Schematics, GA Layout, Terminal Plan, IO List, and
+                            BOM.</p>
+                        <p><b>Pre-Commissioning:</b> Continuity, Megger, IO checking, and Phase sequence testing.</p>
+
+                        <p style="text-align: left; margin-top: 15px;">🎯 <b>Best Professional Interview Answer:</b>
+                            “First I understand project requirements like motor ratings and starter types. I calculate
+                            total load for incomer sizing and select feeder components like MCCBs and Contactors. I
+                            prepare schematics and GA layouts using EPLAN, ensuring proper segregation, earthing, and
+                            ventilation before final testing.”</p>
                     </div>
 
-                    <button class="faq-toggle">Q2. What is a Line Connector in a Drive?</button>
-                    <div class="faq-answer" style="display: none;">
-                        <p><strong>⭐ Definition:</strong> The Line Connector is the input power connection of a VFD
-                            where the AC supply is connected.</p>
-                        <p><strong>⭐ Typical Terminal Names:</strong> L1 – L2 – L3 (or R – Y – B). Sometimes marked as
-                            LINE / INPUT.</p>
-                        <p><strong>⭐ Electrical Process:</strong> 1. AC enters -> 2. Rectifier converts to DC -> 3. DC
-                            bus smooths -> 4. Inverter converts back to variable AC. <strong>📌 Note: Line connector
-                                never goes directly to the motor.</strong></p>
-                        <p class="highlight-q"><b>One-Line Answer:</b> “The line connector is the input terminal of a
-                            VFD where fixed AC supply is connected, feeding the rectifier section of the drive.”</p>
-                    </div>
+
                     <button class="faq-toggle">Comprehensive Technical Guide: MCB Ratings, Curves, and DC
                         Applications</button>
                     <div class="faq-answer" style="display: none;">
@@ -716,6 +1003,46 @@
                             circuits. Selection is based on load current, fault level, utilization category,
                             coordination, and IEC standards compliance.”</p>
                     </div>
+
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a Main Disconnector
+                        and how do you calculate its rating?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p><strong>WHAT IS MAIN DISCONNECTOR?</strong></p>
+                        <p>Main isolating switch used to completely isolate panel power, for maintenance safety and
+                            emergency isolation. Usually a Switch disconnector, MCCB, or Load break switch.</p>
+
+                        <p><strong>WHAT INTERVIEWER MAY ASK?</strong></p>
+                        <p><b>Q1. How do you size the main disconnector switch?</b></p>
+
+                        <p><strong>WHAT YOU SHOULD ANSWER</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Calculate total connected load.</li>
+                            <li>Determine Full Load Current (FLC).</li>
+                            <li>Add safety margin.</li>
+                            <li>Select nearest standard rating.</li>
+                        </ul>
+
+
+
+                        <p><strong>FORMULA</strong></p>
+                        <p style="background: #f9f9f9; padding: 15px; border-radius: 5px; text-align: center;">
+                            $$I = \frac{P}{\sqrt{3} \times V \times PF}$$
+                        </p>
+
+                        <p><strong>EXAMPLE</strong></p>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li><b>Total Load:</b> $50\text{kW}$</li>
+                            <li><b>Voltage:</b> $415\text{V}$</li>
+                            <li><b>PF:</b> $0.8$</li>
+                        </ul>
+                        <p>
+                            $I = 50000 / (1.732 \times 415 \times 0.8) \approx 87\text{A}$
+                            <br>
+                            <b>Add margin:</b> $87 \times 1.25 \approx 109\text{A}$
+                        </p>
+                        <p><b>Selection:</b> Select <b>$125\text{A}$</b> switch disconnector.</p>
+                    </div>
+
                     <button class="faq-toggle">Q5. How do you calculate Busbar size for an LV Panel?</button>
                     <div class="faq-answer" style="display: none;">
                         <p>Busbar size is calculated based on rated current, allowable current density, and
@@ -777,83 +1104,6 @@
                             short-circuit withstand as per IEC 61439."</p>
                     </div>
                 </div>
-                <div class="concept-card">
-                    <h3><i class="fa-solid fa-rotate"></i> Encoder & Feedback Systems</h3>
-
-                    <li>
-                        <button class="faq-toggle">Q. What is an Encoder and how does it work?</button>
-                        <div class="faq-answer" style="display: none;">
-                            <p>An encoder is a feedback device used to measure position, speed, direction, or rotation
-                                of a rotating or linear object (like a motor shaft, conveyor, or actuator).
-                            </p>
-
-                            <p><b>👉 In simple words:</b> Encoder tells the control system “how much” and “how fast”
-                                something has moved.</p>
-
-                            <p><b>Types of Encoders (Basic Understanding):</b></p>
-                            <ol style="padding-left: 20px; list-style-type: decimal;">
-                                <li>1. <b>Incremental Encoder (Most Common):</b> Gives pulses when the shaft rotates.
-                                    Measures Speed, Direction, and Relative position. Loses position information if
-                                    power is OFF. Outputs Channel A, Channel B (phase shifted), and Optional Z channel.
-                                </li>
-                                <li>2. <b>Absolute Encoder:</b> Gives exact position value. Position is retained even
-                                    after power OFF. Used in precise positioning systems. Outputs Binary / Gray code /
-                                    Digital protocols (PROFIBUS, PROFINET, SSI).</li>
-                            </ol>
-
-                            <p><b>What is Encoder Feedback?</b></p>
-                            <p>Encoder feedback is the signal sent from the encoder back to the controller or drive to
-                                confirm actual motor speed, actual position, and direction of rotation. It allows
-                                <b>Closed-loop control</b> by comparing the Commanded value vs. the Actual value.
-                            </p>
-
-
-
-                            <p><b>Why Encoder Feedback is Important:</b></p>
-                            <ol style="padding-left: 20px; list-style-type: decimal;">
-                                <li>1. Accurate speed control</li>
-                                <li>2. Precise positioning</li>
-                                <li>3. Load disturbance correction</li>
-                                <li>4. Fault detection (slip, stall, overspeed)</li>
-                            </ol>
-
-                            <p><b>Encoder Signals (Incremental):</b></p>
-                            <ul style="list-style: none; padding-left: 10px;">
-                                <li>⭐ <b>Signal A:</b> Pulse train</li>
-                                <li>⭐ <b>Signal B:</b> Direction detection</li>
-                                <li>⭐ <b>Signal Z:</b> Home / reference position</li>
-                                <li>⭐ <b>+24V / 0V:</b> Encoder power</li>
-                            </ul>
-
-                            <p><b>Encoder vs Sensor (Simple Difference):</b></p>
-                            <table
-                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
-                                <tr style="background-color: #f2f2f2;">
-                                    <th style="border: 1px solid #ddd; padding: 8px;">Encoder</th>
-                                    <th style="border: 1px solid #ddd; padding: 8px;">Sensor</th>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">Continuous feedback</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">On/Off detection</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">Measures speed & position</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">Detects presence only</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for motion control</td>
-                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for status</td>
-                                </tr>
-                            </table>
-
-                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "An encoder is a feedback device
-                                that converts mechanical motion into electrical signals to provide position, speed, and
-                                direction information to a control system. Encoder feedback enables closed-loop
-                                control."</p>
-                        </div>
-                    </li>
-                </div>
-
                 <div class="concept-card">
                     <h3><i class="fa-solid fa-engine"></i> VFD & Drives Engineering</h3>
                     <ul style="list-style: none; padding: 0;">
@@ -936,7 +1186,77 @@
                                 <p><strong>⚠️ Never touch a braking resistor during operation.</strong></p>
                             </div>
                         </li>
-                        <button class="faq-toggle">Q5. What is Motor Duty Cycle and why is it important?</button>
+                        <button class="faq-toggle">Q5. What is an Encoder and how does it work?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>An encoder is a feedback device used to measure position, speed, direction, or rotation
+                                of a rotating or linear object (like a motor shaft, conveyor, or actuator).
+                            </p>
+
+                            <p><b>👉 In simple words:</b> Encoder tells the control system “how much” and “how fast”
+                                something has moved.</p>
+
+                            <p><b>Types of Encoders (Basic Understanding):</b></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>1. <b>Incremental Encoder (Most Common):</b> Gives pulses when the shaft rotates.
+                                    Measures Speed, Direction, and Relative position. Loses position information if
+                                    power is OFF. Outputs Channel A, Channel B (phase shifted), and Optional Z channel.
+                                </li>
+                                <li>2. <b>Absolute Encoder:</b> Gives exact position value. Position is retained even
+                                    after power OFF. Used in precise positioning systems. Outputs Binary / Gray code /
+                                    Digital protocols (PROFIBUS, PROFINET, SSI).</li>
+                            </ol>
+
+                            <p><b>What is Encoder Feedback?</b></p>
+                            <p>Encoder feedback is the signal sent from the encoder back to the controller or drive to
+                                confirm actual motor speed, actual position, and direction of rotation. It allows
+                                <b>Closed-loop control</b> by comparing the Commanded value vs. the Actual value.
+                            </p>
+
+
+
+                            <p><b>Why Encoder Feedback is Important:</b></p>
+                            <ol style="padding-left: 20px; list-style-type: decimal;">
+                                <li>1. Accurate speed control</li>
+                                <li>2. Precise positioning</li>
+                                <li>3. Load disturbance correction</li>
+                                <li>4. Fault detection (slip, stall, overspeed)</li>
+                            </ol>
+
+                            <p><b>Encoder Signals (Incremental):</b></p>
+                            <ul style="list-style: none; padding-left: 10px;">
+                                <li>⭐ <b>Signal A:</b> Pulse train</li>
+                                <li>⭐ <b>Signal B:</b> Direction detection</li>
+                                <li>⭐ <b>Signal Z:</b> Home / reference position</li>
+                                <li>⭐ <b>+24V / 0V:</b> Encoder power</li>
+                            </ul>
+
+                            <p><b>Encoder vs Sensor (Simple Difference):</b></p>
+                            <table
+                                style="width:100%; font-size: 0.85rem; border-collapse: collapse; margin: 10px 0; border: 1px solid #ddd;">
+                                <tr style="background-color: #f2f2f2;">
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Encoder</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px;">Sensor</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Continuous feedback</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">On/Off detection</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Measures speed & position</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Detects presence only</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for motion control</td>
+                                    <td style="border: 1px solid #ddd; padding: 8px;">Used for status</td>
+                                </tr>
+                            </table>
+
+                            <p class="highlight-q"><b>Interview One-Line Answer:</b> "An encoder is a feedback device
+                                that converts mechanical motion into electrical signals to provide position, speed, and
+                                direction information to a control system. Encoder feedback enables closed-loop
+                                control."</p>
+                        </div>
+                        <button class="faq-toggle">Q6. What is Motor Duty Cycle and why is it important?</button>
                         <div class="faq-answer" style="display: none;">
                             <p><strong>1. Basic Definition:</strong></p>
                             <p>Duty cycle defines how a motor operates over time, including how long it runs and how
@@ -1004,6 +1324,65 @@
                             <p class="highlight-q"><b>Interview One-Line Answer:</b> "Duty cycle is the ratio of
                                 operating time to total cycle time, expressed as a percentage, and determines the
                                 thermal loading and selection of electrical equipment."</p>
+                        </div>
+                        <button class="faq-toggle">Q7. HOW TO SELECT A VFD FOR A MOTOR?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p><strong>⭐ STEP 1: MOTOR NAMEPLATE DETAILS (MOST IMPORTANT)</strong></p>
+                            <p>Always read the motor nameplate first. Note: Power (kW/HP), Voltage (230V/415V/480V), FLA
+                                (Full Load Amps), Frequency, Speed (RPM), Power Factor, and Duty Type (S1, S4, etc.).
+                            </p>
+                            <p><strong>📌 Rule: VFD current rating ≥ Motor FLA</strong></p>
+                            <p><strong>⭐ STEP 2: SUPPLY VOLTAGE & PHASE</strong></p>
+                            <p>VFD input must match supply, output must match motor. (Example: 480V Supply -> 480V VFD).
+                            </p>
+                            <p><strong>⭐ STEP 3: APPLICATION TYPE (VERY IMPORTANT)</strong></p>
+                            <p><strong>🔹 Variable Torque (Normal Duty):</strong> Fan, Pump, Blower. (Select same kW as
+                                motor).</p>
+                            <p><strong>🔹 Constant Torque (Heavy Duty):</strong> Conveyor, Crusher, Elevator. (Select 1
+                                size
+                                higher VFD, e.g., 7.5kW motor → 11kW VFD).</p>
+                            <p><strong>⭐ STEP 4: OVERLOAD CAPACITY</strong></p>
+                            <p>Fans/Pumps (110%-120%), Conveyors (150% for 60s), Hoists (150%-200%). If overload is
+                                high,
+                                choose Heavy Duty.</p>
+                            <p><strong>⭐ STEP 5: CONTROL METHOD</strong></p>
+                            <p>V/f Control (Basic), Sensorless Vector (Conveyor), or Closed Loop/Encoder
+                                (Crane/Elevator).
+                            </p>
+                            <p><strong>⭐ STEP 6: ENVIRONMENT & INSTALLATION</strong></p>
+                            <p>Consider Ambient temperature (40°C), IP rating (IP20/IP54), and Heat derating.</p>
+                            <p><strong>⭐ STEP 7: SAFETY & PROTECTION</strong></p>
+                            <p>Check for STO (Safe Torque Off), Overcurrent, and Earth fault protection.</p>
+                            <p><strong>⭐ STEP 8: COMMUNICATION & I/O</strong></p>
+                            <p>Digital/Analog I/O, Modbus, Profinet, or Ethernet IP.</p>
+                            <p><strong>⭐ STEP 9: ACCESSORIES</strong></p>
+                            <p>Line/Load Reactors, Braking Resistor, or EMC Filter.</p>
+                            <div style="background:#f0f0f0; padding:10px; border-radius:5px; margin:10px 0;">
+                                <strong>🔢 PRACTICAL EXAMPLE:</strong> Motor: 2.25 kW, 480V, 3-Phase, Conveyor.
+                                Selection:
+                                480V VFD, 3 kW (4 HP) Rating, Heavy Duty, Vector Control.
+                            </div>
+                            <p class="highlight-q"><b>One-Line Answer:</b> “VFD is selected based on motor nameplate
+                                current, supply voltage, application torque, overload capacity, control method,
+                                environment,
+                                and safety requirements.”
+                            </p>
+                        </div>
+
+                        <button class="faq-toggle">Q8. What is a Line Connector in a Drive?</button>
+                        <div class="faq-answer" style="display: none;">
+                            <p><strong>⭐ Definition:</strong> The Line Connector is the input power connection of a VFD
+                                where the AC supply is connected.</p>
+                            <p><strong>⭐ Typical Terminal Names:</strong> L1 – L2 – L3 (or R – Y – B). Sometimes marked
+                                as
+                                LINE / INPUT.</p>
+                            <p><strong>⭐ Electrical Process:</strong> 1. AC enters -> 2. Rectifier converts to DC -> 3.
+                                DC
+                                bus smooths -> 4. Inverter converts back to variable AC. <strong>📌 Note: Line connector
+                                    never goes directly to the motor.</strong></p>
+                            <p class="highlight-q"><b>One-Line Answer:</b> “The line connector is the input terminal of
+                                a
+                                VFD where fixed AC supply is connected, feeding the rectifier section of the drive.”</p>
                         </div>
                     </ul>
                 </div>
