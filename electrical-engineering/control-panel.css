@@ -1,7 +1,7 @@
 /* --- CONTROL PANEL DESIGN PAGE STYLES --- */
 
 #panel-design-section {
-    max-width: 1200px;
+    max-width: 1800px; /* Expanded further to allow maximum stretch on desktop monitors */
     margin: 60px auto;
     padding: 0 20px;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -25,14 +25,15 @@
 /* Knowledge Grid */
 .knowledge-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    /* Increased min-width from 350px to 450px to force cards to be much wider */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 35px;
 }
 
 /* Concept Cards */
 .concept-card {
     background: #ffffff;
-    padding: 25px;
+    padding: 30px; /* Increased padding slightly to match the larger card footprint */
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border-top: 6px solid #3308d1; /* Primary theme color */
@@ -104,7 +105,19 @@
     margin-bottom: 15px;
 }
 
+/* --- FULL WIDTH UTILITY CLASS --- */
+/* Breaks complex data blocks out of the columns to span 100% grid width */
+.full-width-card {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+}
+
 /* Responsive Mobile Adjustments */
+@media screen and (max-width: 1024px) {
+    /* Transitions to 2 wide columns or 1 column sooner on mid-sized screens/tablets */
+    .knowledge-grid { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+}
+
 @media screen and (max-width: 768px) {
     .section-heading { font-size: 2rem; }
     .knowledge-grid { grid-template-columns: 1fr; }

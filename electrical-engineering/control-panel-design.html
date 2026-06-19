@@ -1924,6 +1924,94 @@
                                 speed, and error checking across Serial or Ethernet mediums."</p>
                         </div>
                     </li>
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is the difference between
+                        standard Ethernet and PROFINET?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p>This is a very common interview question. Ethernet and PROFINET are not competitors. In fact,
+                            PROFINET works on top of the physical Ethernet layer.</p>
+
+                        <p><strong>🔴 TECHNICAL COMPARISON MATRIX</strong></p>
+                        <div style="overflow-x: auto;">
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 20%;">Parameter</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">Ethernet</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">PROFINET</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Type</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">General communication network
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Industrial communication
+                                            protocol</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Based On</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">IEEE 802.3 Standard</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Industrial Ethernet
+                                            Infrastructure</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Purpose</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Standard IT Data communication
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Real-time industrial
+                                            automation control</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Speed</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">10 / 100 / 1000 Mbps</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">100 Mbps and above</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Real-Time & Determinism</b>
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">No (Non-deterministic)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Yes (Deterministic response
+                                            down to ms)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Diagnostics</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Basic network ping commands
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Advanced slot/subslot device
+                                            diagnostics</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Used In</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Office, PC, Internet hubs</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">PLC, VFD, HMI, Remote I/O
+                                            nodes</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Primary Vendor</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Universal technology</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Mainly Siemens ecosystem</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><strong>🔴 SIMPLE UNDERSTANDING VIA ANALOGY</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Ethernet:</b> It is simply the physical communication medium (the road layer).
+                                Examples include the Internet, standard laptop links, and printer systems.</li>
+                            <li><b>PROFINET:</b> An industrial application protocol that uses Ethernet as its physical
+                                pathway (the specific transit vehicle rules). Examples include Siemens PLC to VFD, PLC
+                                to Remote I/O, and PLC to HMI networks.</li>
+                        </ul>
+
+                        <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview Answer:</b> “Ethernet is a
+                            general-purpose communication technology used for data transmission. PROFINET is an
+                            industrial Ethernet communication protocol based on Ethernet, designed for real-time
+                            communication and diagnostics between PLCs, HMIs, VFDs, and remote I/O devices. Ethernet
+                            provides the communication medium, while PROFINET defines how industrial devices exchange
+                            data securely and deterministically.”</p>
+                    </div>
                     <li>
                         <button class="faq-toggle">Q. What is Baud Rate and how does it affect communication?</button>
                         <div class="faq-answer" style="display: none;">
