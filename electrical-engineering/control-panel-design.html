@@ -1323,6 +1323,82 @@
                             overload and short-circuit and is commonly used for control and small power circuits due to
                             its fast and reliable operation.”</p>
                     </div>
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What Is Energy Class or
+                        Current Limiting Class of an MCB indicate?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p><strong>✅ Definition:</strong></p>
+                        <p>Energy class (Current Limiting Class) of an MCB indicates how quickly the MCB interrupts a
+                            fault and how much fault energy ($I^2t$) is allowed to pass through into the downstream
+                            circuit.</p>
+                        <p>👉 <b>Lower let-through energy = Better protection.</b></p>
+
+                        <p><strong>🔥 Types of Energy Class (As per IEC 60898)</strong></p>
+                        <div style="overflow-x: auto;">
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 30%;">Energy Class</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 70%;">Current Limiting
+                                            Performance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Class 1</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">No specific current limiting
+                                            requirement (worst performance)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Class 2</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Medium current limiting
+                                            capability</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Class 3</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Highest current limiting
+                                            performance (Best protection)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <p><strong>🔹 What is $I^2t$?</strong></p>
+                        <p>$I^2t$ represents the total thermal energy let-through during a short circuit fault. Lower
+                            $I^2t$ results in significantly less heat and mechanical stress, providing superior
+                            protection for:</p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Cables and wire insulation</li>
+                            <li>Contactors and switchgear contacts</li>
+                            <li>Relays and terminal points</li>
+                            <li>Sensitive electronics and PLC hardware</li>
+                        </ul>
+
+                        <p><strong>🔹 Why is Class 3 Preferred?</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Faster fault clearing:</b> Trips the mechanism long before the peak fault current is
+                                reached.</li>
+                            <li><b>Lower fault energy:</b> Restricts arc damage inside the enclosure.</li>
+                            <li><b>Better hardware longevity:</b> Dramatically minimizes thermal degradation in
+                                downstream devices.</li>
+                        </ul>
+
+                        <p><strong>🔹 Where is Class 3 MCB Used?</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li>Industrial Control Panels</li>
+                            <li>PLC and Automation Enclosures</li>
+                            <li>Industrial Distribution Boards</li>
+                            <li>Motor Control Circuits (MCC Feeders)</li>
+                        </ul>
+
+                        <p style="text-align: left; margin-top: 15px;">🎯 <b>Perfect Interview Answer:</b> “The energy
+                            class of an MCB indicates its current-limiting capability and the amount of fault energy
+                            ($I^2t$) it allows to pass during a short circuit. According to IEC 60898, MCBs are
+                            classified into Class 1, Class 2, and Class 3, with Class 3 providing the highest current
+                            limiting and best protection to cables and electrical equipment.”</p>
+                    </div>
 
                     <button class="faq-toggle">Q3. What is a dv/dt Filter?</button>
                     <div class="faq-answer" style="display: none;">
@@ -1924,6 +2000,121 @@
                                 speed, and error checking across Serial or Ethernet mediums."</p>
                         </div>
                     </li>
+                    <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is CAN Protocol, its
+                        physical architecture, and how does it compare to Modbus?</button>
+                    <div class="faq-answer" style="display: none; text-align: left;">
+                        <p>CAN is one of the most important communication protocols used in the automotive industry,
+                            industrial automation, machine control, and transportation domains. Since Quest Global works
+                            heavily in transport and industrial engineering, CAN is a high-priority topic.</p>
+
+                        <p><strong>🔹 What is CAN?</strong></p>
+                        <p>CAN (Controller Area Network) is a multi-master serial communication protocol developed by
+                            Bosch that allows multiple electronic devices (ECUs/controllers) to communicate with each
+                            other over a two-wire network without a central host computer.</p>
+
+                        <p><strong>🔹 Physical Layer & Differential Signaling</strong></p>
+                        <p>The physical network utilizes two twisted wires: <b>CAN High (CAN_H)</b> and <b>CAN Low
+                                (CAN_L)</b>. It uses differential voltage signaling which provides excellent high noise
+                            immunity and reliable performance in harsh electrical environments.</p>
+
+
+
+                        <p><strong>🔹 Termination Resistance Requirement</strong></p>
+                        <p>A standard CAN bus requires exactly a <b>$120\ \Omega$ resistor</b> at each physical end of
+                            the bus to prevent signal reflections. When troubleshooting with a multimeter across CAN_H
+                            and CAN_L on a healthy, powered-down network, the total measured resistance should read
+                            <b>$\approx 60\ \Omega$</b> (due to the two parallel $120\ \Omega$ resistors).
+                        </p>
+
+
+
+                        <p><strong>🔹 Technical Comparison Matrix</strong></p>
+                        <div style="overflow-x: auto;">
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 20%;">Parameter</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">CAN Protocol</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">Modbus RTU</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Physical Medium</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Two-wire differential loop
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">RS485 differential pair</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Communication
+                                                Architecture</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Multi-master (Message-based
+                                            collision resolution)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Master-slave topology</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Max Transmission Speed</b>
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Up to $1\text{ Mbps}$</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Typically lower (up to
+                                            $115.2\text{ kbps}$)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Error Detection
+                                                Capability</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Excellent (CRC, Bit stuffing,
+                                            Frame checks)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Basic (CRC-16 only)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Automotive Domain Use</b>
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Yes (Standard across all
+                                            modern vehicles)</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">No (Strictly
+                                            industrial/building automation)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><strong>🔹 Standard CAN vs. Extended CAN Frame Fields</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>Standard CAN:</b> Uses an **11-bit identifier** field (provides $2,048$ unique
+                                message IDs).</li>
+                            <li><b>Extended CAN:</b> Uses a **29-bit identifier** field (provides over $536$ million
+                                unique message IDs).</li>
+                            <li><b>Frame Structure Elements:</b> Start of Frame (SOF), Identifier (ID), Control Field,
+                                Data Field ($0-8\text{ bytes}$), CRC, ACK slot, and End of Frame (EOF).</li>
+                        </ul>
+
+                        <p><strong>🔹 CAN vs. CANopen</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px;">
+                            <li><b>CAN:</b> Defines only the Physical and Data Link layers (OSI Layers 1 & 2). It deals
+                                with hardware bits, voltages, and raw frame transfers.</li>
+                            <li><b>CANopen:</b> A higher-layer application protocol (OSI Layer 7) built on top of CAN
+                                hardware. It introduces standardized device profiles, an Object Dictionary, and
+                                application management formats used for industrial motion controllers and servo drives.
+                            </li>
+                        </ul>
+
+                        <p><strong>📋 RECRUITER ASSESSMENTS & TECHNICAL ROUND ANSWERS</strong></p>
+                        <p><b>Q1. Why normal single-ended wiring is not used instead of CAN differential
+                                wiring?</b><br>Answer: Single-ended wiring is highly susceptible to EMI/noise. CAN uses
+                            a differential receiver that subtracts the voltage of CAN_L from CAN_H. Because external
+                            noise spikes hit both wires equally, the common-mode noise is cancelled out entirely during
+                            subtraction.</p>
+                        <p><b>Q2. What happens if one of the 120 $\Omega$ resistors is missing or broken?</b><br>Answer:
+                            The network impedance changes from $60\ \Omega$ to $120\ \Omega$. This loss of line
+                            impedance match causes high-frequency electrical signals to reflect backward from the cable
+                            ends, corrupting data frames and creating continuous CRC error flags on the nodes.</p>
+
+                        <p style="text-align: left; margin-top: 15px;">🎯 <b>One-Line Interview Answer:</b> “CAN is a
+                            high-speed, two-wire differential, multi-master communication protocol developed by Bosch,
+                            widely used in automotive and industrial applications for reliable real-time communication
+                            between controllers and devices.”</p>
+                    </div>
                     <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is the difference between
                         standard Ethernet and PROFINET?</button>
                     <div class="faq-answer" style="display: none; text-align: left;">
@@ -2794,6 +2985,550 @@
                                 proximity sensor is connected using 3 wires (Brown +24V, Blue 0V, Black Signal) where
                                 PNP or NPN configuration is used based on system common.”</p>
                         </div>
+                    </div>
+                </div>
+                <div class="concept-card full-width-card" style="text-align: left;">
+                    <h3 style="text-align: left;"><i class="fa-solid fa-conveyor-belt"></i> Conveyor & Crusher
+                        Instrumentation — Process Architecture</h3>
+
+                    <div class="faq-group">
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What instruments are used
+                            to automate and protect industrial conveyors and crusher hoppers?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>This layout outlines the typical instrumentation system found in raw material handling
+                                plants, mining systems, and bulk water/solids management facilities.</p>
+
+                            <p><strong>🏭 1. CORE CONVEYOR PROTECTION INSTRUMENTS</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px;">
+                                <li><b>Pull Cord Switch:</b> Emergency stop function pulled manually from any physical
+                                    point along the conveyor string.</li>
+                                <li><b>Belt Sway Switch:</b> Detects belt misalignment or tracking errors to prevent
+                                    structural or edge damage.</li>
+                                <li><b>Zero Speed Switch:</b> Detects mechanical slippage or broken couplings when the
+                                    motor rotates but the conveyor stops.</li>
+                                <li><b>Speed Sensor/Encoder:</b> Provides active, continuous belt speed feedback for
+                                    loop monitoring.</li>
+                                <li><b>Chute Blockage Switch:</b> Detects material piling up inside the discharge chute
+                                    to prevent jamming.</li>
+                                <li><b>Motor Protection Loop:</b> Includes winding/bearing RTD (PT100), Overload Relays,
+                                    MCCB, and VFD monitoring.</li>
+                            </ul>
+
+
+
+                            <p><strong>🏭 2. CRUSHER HOPPER INSTRUMENTATION</strong></p>
+                            <p><b>Level Measurement System:</b> Utilizes advanced Radar Level Transmitters or Ultrasonic
+                                Level Transmitters (Analog $4–20\text{ mA}$) paired with mechanical High-Level and
+                                Low-Level switches (Digital DI) to prevent hopper overflow and downstream crusher dry
+                                running.</p>
+
+                            <p><strong>🏭 3. DELIVERY & LOADING CONVEYOR ADDITIONS</strong></p>
+                            <ul style="list-style-type: disc; padding-left: 20px;">
+                                <li><b>Belt Weigher:</b> Measures live throughput rate and totalized mass flow in Tons
+                                    Per Hour (TPH).</li>
+                                <li><b>Metal Detector:</b> Scans raw material streams to stop the line if tramp metal
+                                    threatens the crusher jaws.</li>
+                                <li><b>Magnetic Separator:</b> Uses powerful cross-belt magnets to automatically pull
+                                    out ferrous contaminants.</li>
+                            </ul>
+
+
+
+                            <p><strong>📋 TYPICAL PROCESS PLC I/O LIST MAPPING</strong></p>
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 33%;">Digital Inputs
+                                            (DI)</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 33%;">Digital Outputs
+                                            (DO)</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 34%;">Analog Inputs (AI)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd; vertical-align: top;">
+                                            • Pull Cord Switch<br>
+                                            • Belt Sway Switch<br>
+                                            • Zero Speed Switch<br>
+                                            • Motor Trip Auxiliary<br>
+                                            • E-Stop Loop<br>
+                                            • Hopper High/Low Switches
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd; vertical-align: top;">
+                                            • Conveyor Start Command<br>
+                                            • Conveyor Stop Interlock<br>
+                                            • Crusher Start Interlocking<br>
+                                            • Crusher Stop Relay<br>
+                                            • Local Alarm Horn<br>
+                                            • Pre-Start Warning Lamp
+                                        </td>
+                                        <td style="padding: 8px; border: 1px solid #ddd; vertical-align: top;">
+                                            • Motor Current ($4–20\text{ mA}$)<br>
+                                            • Bearing Temp (RTD/PT100)<br>
+                                            • Level Transmitter ($4–20\text{ mA}$)<br>
+                                            • Belt Speed Encoder feedback<br>
+                                            • Belt Weigher TPH Signal
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>Interview Strategy Answer:</b> “When
+                                designing a material handling automation system, safety and sequence interlocking are
+                                paramount. I classify safety devices like Pull Cords and E-Stops directly to fail-safe
+                                Digital Inputs, map structural protections like Belt Sway to interlock sequence stops,
+                                and use Analog loops for live metrics like material level, bearing temperatures, and
+                                belt throughput (TPH) calculation.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What are the standard ISO
+                            vibration limits and are vibration sensors mandatory for industrial crushers?</button>
+                        <div class="faq-answer" style="display: none; text-align: left;">
+                            <p>Evaluating mechanical vibration is a critical aspect of predictive maintenance and system
+                                protection for rotating machinery in severe environments like mining, cement, and
+                                material handling.</p>
+
+                            <p><strong>🔴 ISO GENERAL VIBRATION SEVERITY (VELOCITY RMS)</strong></p>
+                            <p>For standard industrial rotating equipment, parameters are typically referenced as per
+                                <b>ISO 10816</b> (now transitioned to the <b>ISO 20816</b> series).</p>
+
+                            <div style="overflow-x: auto;">
+                                <table border="1"
+                                    style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                    <thead>
+                                        <tr style="background-color: #f2f2f2;">
+                                            <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">Vibration
+                                                Velocity ($\text{mm/s RMS}$)</th>
+                                            <th style="padding: 8px; border: 1px solid #ddd; width: 60%;">Equipment
+                                                Operating Condition</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">$0\text{ to }2.8\text{
+                                                mm/s}$</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Good / Normal operation
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">$2.8\text{ to }4.5\text{
+                                                mm/s}$</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Acceptable execution</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">$4.5\text{ to }7.1\text{
+                                                mm/s}$</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Unsatisfactory / Warning
+                                                Level</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">$\text{Above }7.1\text{
+                                                mm/s}$</td>
+                                            <td style="padding: 8px; border: 1px solid #ddd;">Unacceptable / Interlock
+                                                Trip & Investigation Required</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+                            <p><strong>🔴 SPECIFIC APPLICATION: CRUSHER APPLICATION LIMITS</strong></p>
+                            <p>If an interviewer asks: <i>"What vibration limit would you configure for a raw material
+                                    crusher?"</i></p>
+                            <p><b>Answer:</b> The exact configuration depends entirely on the crusher manufacturer and
+                                mechanical bearing selection. Typically, I would specify a pre-alarm warning limit
+                                around $4.5\text{ mm/s}$ and an automatic sequence interlock trip around $7\text{
+                                mm/s}$, while ensuring the <b>OEM recommendation always takes priority over general ISO
+                                    guidelines</b>. This distinction highlights an experienced engineering approach.</p>
+
+                            <p><strong>🛠️ VIBRATION MONITORING IMPLEMENTATION STRATEGY</strong></p>
+                            <p>Is a vibration sensor mandatory on a crusher loop? No, it is not always mandatory, but it
+                                is highly recommended based on project constraints.</p>
+
+                            <ul style="list-style-type: disc; padding-left: 20px;">
+                                <li><b>When it is Required:</b> High-capacity installations ($>100\text{ kW}$ systems in
+                                    mining, cement, or heavy utilities), critical production lines where breakdown halts
+                                    the entire plant flow, predictive maintenance contracts, and unified PLC/SCADA
+                                    instrumentation tracking systems.</li>
+                                <li><b>When it is Omitted:</b> Compact crusher plants, tight-budget frameworks, or
+                                    installations where basic motor path safeguards are deemed sufficient. In these
+                                    minimal applications, a system relies on: MCCB protection, Overload Relays, motor
+                                    thermal embedded loops, and zero-speed shaft monitoring.</li>
+                            </ul>
+
+
+
+                            <p><strong>🎯 CRITICAL RECRUITER ASSESSMENTS & WRITTEN QA</strong></p>
+                            <p><b>Q. If you are the lead Design Engineer on a major manufacturing layout, would you
+                                    choose to include a vibration sensor?</b><br>Answer: Yes. I would actively recommend
+                                installing a dedicated vibration transmitter directly onto the crusher bearing housing
+                                and looping its $4–20\text{ mA}$ output back to the PLC Analog Input card. This allows
+                                for real-time condition monitoring, anomaly tracking, and preventative maintenance
+                                strategies before catastrophic breakdown occurs.</p>
+
+                            <p style="text-align: left; margin-top: 15px;">🎯 <b>One-Line Interview Summary:</b> “As per
+                                ISO vibration standards (ISO 10816 / ISO 20816), vibration severity is evaluated in mm/s
+                                RMS; for critical machinery like crushers, I recommend adding a transmitter to the
+                                bearing housing to provide real-time predictive feedback to the PLC, setting an alarm at
+                                4.5 mm/s and a trip at 7 mm/s while honoring OEM specific manuals.”</p>
+                        </div>
+                        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a crusher cavity sensor, why is it used, and what is its core operating principle?</button>
+        <div class="faq-answer" style="display: none; text-align: left;">
+            <p>A crusher cavity sensor monitors the volume of rock or material residing directly inside the crushing chamber or feeding hopper. It provides continuous feed feedback to eliminate system choking or starvation.</p>
+
+            <p><strong>🎯 WHY IS IT USED?</strong></p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li><b>Prevent Crusher Choking:</b> Stops raw material from overfilling the chamber and jamming the mechanical jaws.</li>
+                <li><b>Maintain Optimum Feed Level:</b> Ensures choke feeding conditions for uniform particle reduction and optimal rock-on-rock crushing efficiency.</li>
+                <li><b>Protect Drive System:</b> Prevents heavy mechanical shock loads and motor overcurrent trips caused by massive overloads.</li>
+            </ul>
+
+            
+
+            <p><strong>🔴 APPLIED LEVEL TECHOMETER MATRIX</strong></p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li><b>1. Ultrasonic Level Sensor:</b> Mounted directly above the feed mouth. It utilizes the acoustic <b>Time-of-Flight (ToF)</b> principle, emitting high-frequency sound waves that bounce off material surfaces. Distance is processed using the physical wave equation: 
+                    <p style="background: #f9f9f9; padding: 8px; border-radius: 4px; display: inline-block; margin: 5px 0;">$$\text{Distance} = \frac{\text{Velocity} \times \text{Time}}{2}$$</p>
+                </li>
+                <li><b>2. Radar Level Sensor:</b> Transmits high-frequency electromagnetic microwave pulses downwards. It is heavily preferred over ultrasonic models in heavy material handling loops because microwave frequencies cut through extreme dust, moisture, and turbulence without signal attenuation.</li>
+                <li><b>3. Laser Level Sensor:</b> Deployed in advanced specialized installations requiring tight, narrow beam tracking away from internal structural sidewalls.</li>
+            </ul>
+
+            
+
+            <p><strong>🤖 AUTOMATED PLC FEED CONTROL INTERLOCKS</strong></p>
+            <p>The sensor continuously passes a live signal (typically $4–20\text{ mA}$ or PROFINET bus data) back to the PLC to run logic routines:</p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li><b>High-High Limit Reached:</b> PLC forces an immediate interlock stop command to the upstream feed conveyor to prevent spilling.</li>
+                <li><b>Low-Low Limit Reached:</b> PLC accelerates or turns ON upstream feeding mechanics to prevent low-efficiency empty running.</li>
+                <li><b>Normal Band:</b> The system runs continuously, optimizing throughput dynamically.</li>
+            </ul>
+
+            <p><strong>📋 RECRUITER TECHNICAL ASSESSMENTS</strong></p>
+            <p><b>Q. If you are configuring a system layout, which technology would you select for a primary jaw crusher?</b><br>Answer: I would choose a <b>Radar Level Sensor</b>. Primary and secondary crushers produce severe ambient dust clouds. Ultrasonic waves can scatter or reflect prematurely off dense dust particles, leading to false high level readouts. Radar signals completely ignore suspended dust and surface air turbulence, providing highly stable measurements.</p>
+            
+            <p><b>Q. Is a cavity level loop mandatory on every crushing system?</b><br>Answer: It is not mandatory for basic or low-tonnage skid systems. However, for medium to high-capacity automated production facilities (such as mining, aggregate sorting, or cement processing lines), it is standard infrastructure to protect the mechanical asset and balance automation control loops.</p>
+
+            <p style="text-align: left; margin-top: 15px;">🎯 <b>One-Line Interview Answer:</b> “A cavity sensor monitors the material level inside a crusher chamber using ultrasonic or radar wave reflection; this data allows the PLC to modulate upstream feeding arrays, protecting the motor from overloads and maintaining optimal process throughput.”</p>
+        </div>
+        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. How do you control the feed rate of a crusher and which parameter is most important?</button>
+        <div class="faq-answer" style="display: none; text-align: left;">
+            <p><strong>💡 Simple Answer:</strong></p>
+            <p>Feed rate is controlled by regulating the amount of material entering the crusher. This is typically achieved using a VFD-controlled feeder conveyor or vibrating feeder reacting to crusher load and cavity level metrics.</p>
+
+            <p><strong>🔄 CLOSED-LOOP CONTROL ARCHITECTURE</strong></p>
+            <p style="text-align: center; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                Level/Current Sensor → PLC Core → Feeder VFD → Conveyor Speed → Crusher Chamber
+            </p>
+
+            
+
+            <p><strong>🔴 THE 4 CONTROL METHODOLOGIES</strong></p>
+            
+            <p><b>1. Motor Current Based Control (Most Common & Preferred)</b><br>
+            Motor current is the most reliable parameter because it directly represents mechanical load stress.
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>Current $< 70\%$ FLA (Full Load Amps) → Increase feed rate</li>
+                <li>Current $70\% - 90\%$ FLA → Maintain current feed rate</li>
+                <li>Current $> 90\%$ FLA → Reduce feed rate</li>
+                <li>Current $> 100\%$ FLA → Immediately Stop upstream feeder to prevent stalling</li>
+            </ul>
+            </p>
+
+            <p><b>2. Cavity Level Control</b><br>
+            Monitored via Radar or Ultrasonic sensors to prevent empty running or choking.
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>Level $< 30\%$ → Increase feed</li>
+                <li>Level $30\% - 80\%$ → Normal optimum feed</li>
+                <li>Level $> 80\%$ → Reduce feed</li>
+                <li>Level $> 95\%$ → Stop upstream feeder completely</li>
+            </ul>
+            </p>
+
+            <p><b>3. Belt Weigher Throughput Control (TPH)</b><br>
+            The PLC acts on feedback from a Belt Scale to lock onto a specific production target (e.g., $500\text{ TPH}$ or $800\text{ TPH}$). If actual TPH drops, the PLC ramps up the feeder VFD speed dynamically.
+            </p>
+
+            <p><b>4. Power Consumption Monitoring (kW)</b><br>
+            Tracking true active power ($\text{kW}$) consumption of the main crusher motor. Higher kilowatts directly correlate to a dense crushing chamber load.
+            </p>
+
+            
+
+            <p><strong>📋 RECRUITER TECHNICAL CRITERIA</strong></p>
+            <p><b>Q. If forced to choose only ONE parameter for basic feed rate control, which would you select?</b><br>
+            Answer: <b>Crusher motor current.</b> It provides the most immediate indication of internal mechanical overloading. While level sensors are exceptional for volumetric checks, dense or hard rock can cause motor overcurrent even at lower volumes; thus, current is the primary line of defense to avoid catastrophic trips.</p>
+
+            <p style="text-align: left; margin-top: 15px;">🎯 <b>Best Interview Answer:</b> “For crusher feed rate control, I would primarily use crusher motor current as the process variable because it directly represents crusher loading. For better control and optimization, I would also monitor cavity level using a radar level sensor and belt throughput using a belt weigher. The PLC would use these parameters to adjust the feeder VFD speed and maintain optimum crusher performance.”</p>
+        </div>
+        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is a linear transducer, its working principles, and how does it manage crusher gap measurement?</button>
+        <div class="faq-answer" style="display: none; text-align: left;">
+            <p>A Linear Transducer is a high-precision position sensor used to measure linear movement or displacement along a single axis and convert it into a standard electrical feedback signal for a PLC, DCS, or controller.</p>
+
+            <p><strong>🎯 INDUSTRIAL APPLICATIONS</strong></p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li><b>Hydraulic Cylinders:</b> Real-time stroke position feedback for proportional valve control loops.</li>
+                <li><b>Crusher Gap Measurement:</b> Continuous tracking of the Closed Side Setting (CSS) in automated cone crushers.</li>
+                <li><b>Industrial Machinery:</b> Actuators, heavy damper gates, rolling mills, and press stroke positioning.</li>
+            </ul>
+
+            <p><strong>⚙️ WORKING PRINCIPLE & OUTPUT SIGNALS</strong></p>
+            <p>The transducer element is mechanically linked or magnetically coupled to the moving target. As the object strokes, the transducer modulates its electrical output proportionally. For example, a $0\text{ to }1000\text{ mm}$ cylinder stroke can map directly to a standard $4–20\text{ mA}$ analog current loop:</p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>$0\text{ mm}$ (Fully Retracted) $\rightarrow 4\text{ mA}$</li>
+                <li>$500\text{ mm}$ (Mid Stroke) $\rightarrow 12\text{ mA}$</li>
+                <li>$1000\text{ mm}$ (Fully Extended) $\rightarrow 20\text{ mA}$</li>
+                <li><b>Alternative Interfaces:</b> $0–10\text{ V}$ analog, SSI (Synchronous Serial Interface), or fieldbus networks like PROFINET for smart models.</li>
+            </ul>
+
+            
+
+            <p><strong>🔬 CORE TECHNOLOGY TYPES</strong></p>
+            <p><b>1. LVDT (Linear Variable Differential Transformer)</b><br>
+            A non-contact technology using a movable ferromagnetic core within one primary and two secondary transformer coils. Displacement alters the electromagnetic induction coupling, providing high accuracy with zero mechanical wear and long life.</p>
+            
+            <p><b>2. Magnetostrictive Linear Transducers</b><br>
+            Commonly embedded inside heavy-duty hydraulic cylinder shafts. They utilize an internal waveguide and an external ring magnet to measure the precise time-of-flight of a torsional strain pulse. This provides absolute position measurement that is completely unaffected by power cycles.</p>
+
+            
+
+            <p><strong>📊 ENCODER VS. LINEAR TRANSDUCER COMPARISON</strong></p>
+            <div style="overflow-x: auto;">
+                <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 25%;">Parameter</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 38%;">Rotary Encoder</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 37%;">Linear Transducer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Measurement Type</b></td><td style="padding: 8px; border: 1px solid #ddd;">Rotary displacement / Angular path</td><td style="padding: 8px; border: 1px solid #ddd;">Linear movement / Axial displacement</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Primary Metrics</b></td><td style="padding: 8px; border: 1px solid #ddd;">Rotational Speed ($\text{RPM}$) and shaft angles</td><td style="padding: 8px; border: 1px solid #ddd;">Stroke depth and spatial distance ($\text{mm}$)</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Mounting Profile</b></td><td style="padding: 8px; border: 1px solid #ddd;">Motor shafts, pulleys, and rotary joints</td><td style="padding: 8px; border: 1px solid #ddd;">Cylinder bodies, sliders, and guide tracks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>🏗️ CONE CRUSHER CLOSED SIDE SETTING (CSS) LOOP</strong></p>
+            <p>In modern automated crushing plants, a linear transducer is integrated directly onto the hydraulic setting cylinders. The PLC continuously processes the transducer’s position data to gauge the exact crusher gap opening. If the gap deviates due to mechanical wear or hydraulic drift, the PLC commands proportional hydraulic valves to re-adjust the setting automatically, locking in consistent product sizing.</p>
+
+            <p style="text-align: left; margin-top: 15px;">🎯 <b>Smart Interview Answer:</b> “In automation systems, linear transducers are primarily utilized for high-precision position feedback of hydraulic cylinders and actuators. In crusher automation, they provide the continuous linear position feedback the PLC requires to monitor and adjust the crusher's closed side setting dynamically, balancing process performance against mechanical wear constraints.”</p>
+        </div>
+        <button class="faq-toggle" style="text-align: left; width: 100%;">Q. What is the difference between an Absolute Encoder and a Zero Speed Switch in industrial applications?</button>
+        <div class="faq-answer" style="display: none; text-align: left;">
+            <p>Both devices track rotational movement, but they serve entirely different engineering roles—one provides precise tracking data while the other functions as a dedicated safety interlock switch.</p>
+
+            <p><strong>1️⃣ ABSOLUTE ENCODER (PRECISE POSITION TRACKING)</strong></p>
+            <p>An Absolute Encoder provides the exact angular or linear shaft position, maintaining its data even after a sudden power loss. If a system shuts down at $125^\circ$, it reads exactly $125^\circ$ immediately upon powering back up without requiring a homing sequence.</p>
+            
+            <p><b>🔹 Key Technical Sub-types:</b></p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li><b>Single-turn Encoders:</b> Measures unique angular positions within exactly one $360^\circ$ rotation.</li>
+                <li><b>Multi-turn Encoders:</b> Tracks internal degrees plus the total number of complete shaft revolutions.</li>
+            </ul>
+
+            <p><b>🔹 Core Industrial Applications:</b> Stacker reclaimers, crane axis tracking, slewing drive systems, hydraulic actuators, and crusher gap adjustment positioning.</p>
+
+            
+
+            <p><strong>2️⃣ ZERO SPEED SWITCH / ZSS (ROTATIONAL SAFEGUARDS)</strong></p>
+            <p>A Zero Speed Switch is a discrete safety device used to detect whether a rotating shaft or conveyor pulley has dropped below a critical speed threshold or stopped unexpectedly.</p>
+            
+            <p><b>🔹 How the Logic Works:</b></p>
+            <p style="text-align: center; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                Metallic Targets on Pulley → Inductive Sensor Pulsing → Frequency Drop → ZSS Internal Relay Drops → PLC Fault Alarm → Upstream Interlock Trip
+            </p>
+            <p><b>🔹 Core Industrial Applications:</b> Main belt conveyors, industrial crushers, bucket elevators, and heavy feeders.</p>
+
+            
+
+            <p><strong>🔴 TECHNICAL COMPARISON MATRIX</strong></p>
+            <div style="overflow-x: auto;">
+                <table border="1" style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 20%;">Parameter</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">Absolute Encoder</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; width: 40%;">Zero Speed Switch (ZSS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Primary Purpose</b></td><td style="padding: 8px; border: 1px solid #ddd;">Measures exact positional angle or continuous count coordinates.</td><td style="padding: 8px; border: 1px solid #ddd;">Detects a clean running vs. stopped/stalled status.</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Feedback Data</b></td><td style="padding: 8px; border: 1px solid #ddd;">Continuous positional value ($0-360^\circ$ or continuous multi-turn).</td><td style="padding: 8px; border: 1px solid #ddd;">Speed monitoring protection limits.</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Signal Output</b></td><td style="padding: 8px; border: 1px solid #ddd;">Analog ($4–20\text{ mA}$) or Bus data (PROFINET, CANopen, SSI).</td><td style="padding: 8px; border: 1px solid #ddd;">Digital ON/OFF contact (Relay or NPN/PNP).</td></tr>
+                        <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Cost / Complexity</b></td><td style="padding: 8px; border: 1px solid #ddd;">High hardware precision; requires communication mapping.</td><td style="padding: 8px; border: 1px solid #ddd;">Low cost; simple digital input connection.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>📋 CONVEYOR PROJECT SELECTION LOGIC</strong></p>
+            <p><b>Q. Why not install an Absolute Encoder on every conveyor line to get full telemetry?</b><br>
+            Answer: Because for standard material handling lines, tracking exact positional coordinates is unnecessary. We simply need to know if the drive coupling or belt broke or jammed. A Zero Speed Switch provides this safety integration at a much lower cost. Encoders are strictly reserved when a loop demands exact closed-loop VFD vector control or active production rate calculation.</p>
+            
+            <p style="text-align: left; margin-top: 15px;">🎯 <b>Smart Interview Answer:</b> “For a standard conveyor system, I would normally use a Zero Speed Switch for protection and trip functions. If accurate speed feedback, throughput monitoring, or closed-loop control is required, I would use an Incremental or Absolute Encoder depending on the application requirements.”</p>
+        </div>
+        <button class="faq-toggle" style="text-align: left; width: 100%;">📋 Click to Expand Complete Master Question List (Quest Global, Rockwell, HCL Preparation)</button>
+        <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+            <p>This master question checklist compiles high-probability technical assessment and interview panel questions across all major core domains.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-diagram-project"></i> 1. P&ID & Process Documentation</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a P&ID (Piping and Instrumentation Diagram)?</li>
+                <li>What is the primary difference between a PFD (Process Flow Diagram) and a P&ID?</li>
+                <li>What is your step-by-step methodology to read and interpret a complex P&ID?</li>
+                <li>How do you trace and explain a complete closed control loop directly from a P&ID layout?</li>
+                <li>What is ISA tagging philosophy, and how do letter identifiers format field devices?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-list-check"></i> 2. Instrument Lists & PLC I/O Lists Sizing</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>How do you prepare an Instrument List from engineering layouts?</li>
+                <li>What exactly is a PLC I/O List, and what vital parameters must it capture?</li>
+                <li>What is the core difference between an Instrument List and a PLC I/O List?</li>
+                <li>What specific engineering documents are mandatory prerequisites before starting an I/O List design?</li>
+                <li>How do you calculate and justify spare I/O allocations for future project expansions?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-microchip"></i> 3. Programmable Logic Controllers (PLC) Architecture</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a PLC and what defines its industrial resilience?</li>
+                <li>Can you explain the mechanics of a PLC scan cycle (Read Inputs, Execute Logic, Write Outputs)?</li>
+                <li>What is the operational difference between DI, DO, AI, and AO channels?</li>
+                <li>What is a Remote I/O system, and under what structural conditions is it deployed?</li>
+                <li>Why do design frameworks frequently use specific distributed modules like the Siemens ET200SP?</li>
+                <li>What are the technical and processing differences between a Siemens S7-1200 and S7-1500 controller ecosystem?</li>
+                <li>What is the role of a CPU in hardware control?</li>
+                <li>What happens to a plant's physical outputs when a CPU goes into a hardware STOP mode fault?</li>
+                <li>What is your systematic procedure to troubleshoot an active PLC hardware fault?</li>
+                <li>What is a watchdog timer, and how does it safeguard code execution from hanging loops?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-network-wired"></i> 4. Industrial Communication Protocols</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What are the primary differences between PROFINET and PROFIBUS infrastructures?</li>
+                <li>How does Modbus RTU differ from Modbus TCP?</li>
+                <li>What are the electrical and distance calculation differences between RS232 and RS485 physical links?</li>
+                <li>How do you contrast Ethernet/IP against PROFINET networks?</li>
+                <li>How do you interface non-native Modbus field devices into a Siemens PLC master system?</li>
+                <li>What is an IP address in industrial networking?</li>
+                <li>What is a subnet mask, and how does it define local automated networks?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-gauge"></i> 5. Field Instrumentation Mechanics</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a pressure transmitter?</li>
+                <li>What is the internal physics working principle of a piezo-resistive or capacitive pressure transmitter?</li>
+                <li>What is a Differential Pressure (DP) transmitter?</li>
+                <li>What are the common industrial applications of a DP transmitter (Level, Flow, Filter monitoring)?</li>
+                <li>What is a level transmitter?</li>
+                <li>How do you compare Guided/Non-Contact Radar against Ultrasonic transmitters in extreme dust environments?</li>
+                <li>What is the operational difference between an RTD and a Thermocouple element?</li>
+                <li>What is the working principle of a PT100 sensor, and what does the "100" indicate?</li>
+                <li>What is a flow transmitter?</li>
+                <li>What are the primary types of industrial flow meters?</li>
+                <li>What is the working principle of an Electromagnetic flow meter (Faraday's Law)?</li>
+                <li>What is the working principle of a Vortex shedding flow meter?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-gears"></i> 6. Control Valves & Actuator Sizing</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a control valve assembly?</li>
+                <li>What is the difference between a Fail Open (FO) and Fail Close (FC) mechanical valve configuration?</li>
+                <li>How do Air-to-Open and Air-to-Close pneumatic functions translate to fail-safe actions?</li>
+                <li>What is a valve positioner, and why is it required on modulating control valves?</li>
+                <li>What operational advantages do digital smart positioners bring to a SCADA framework?</li>
+                <li>How do you calculate and size a control valve flow coefficient ($C_v$)?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-chart-line"></i> 7. Analog Loops ($4–20\text{ mA}$) Logic</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>Why is a $4–20\text{ mA}$ loop preferred over a $0–20\text{ mA}$ or $0–10\text{ V}$ instrumentation signal?</li>
+                <li>Why is the baseline signal raised above zero ($4\text{ mA}$ baseline offset)?</li>
+                <li>How do you perform a multi-point calibration on a process transmitter?</li>
+                <li>What happens to a PLC input card's raw decimal reading if an analog wire breaks?</li>
+                <li>What is meant by the engineering expression "live zero"?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-vial-circle-check"></i> 8. Plant Commissioning & Loop Checks</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is the operational definition of plant commissioning?</li>
+                <li>What is a loop check procedure, and how do you differentiate cold loop checking from hot loop checking?</li>
+                <li>Can you explain your standard sequence for a full system commissioning procedure?</li>
+                <li>How do you simulate and validate Analog Input (AI) signals from the field to the HMI screen?</li>
+                <li>How do you test and map discrete Digital Input (DI) switch contacts?</li>
+                <li>How do you execute stroke and calibration testing on an automated control valve?</li>
+                <li>What is a Factory Acceptance Test (FAT)?</li>
+                <li>What is a Site Acceptance Test (SAT), and what are its standard sign-off criteria?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-conveyor-belt"></i> 9. Material Handling: Crusher & Conveyor Systems</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What specific array of instrumentation is mandatory on an industrial material handling conveyor?</li>
+                <li>What is a Pull Cord Switch, and how is it integrated into an emergency safety network?</li>
+                <li>What is a Belt Sway Switch, and how does its mechanical trigger trip a sequence stop?</li>
+                <li>What is a Zero Speed Switch (ZSS), and how does its frequency drop safeguard against coupling failures?</li>
+                <li>What is a chute blockage switch, and where is it physically installed?</li>
+                <li>What is a belt weigher, and how does it compute active flow velocity into Tons Per Hour (TPH)?</li>
+                <li>What diagnostic instruments are integrated onto a heavy crusher machine?</li>
+                <li>Is bearing vibration monitoring technically mandatory or optional for high-power crushers, and why?</li>
+                <li>What is a crusher cavity sensor, and how does it prevent chamber choking?</li>
+                <li>How do you automate and regulate the feed rate of a raw material crusher?</li>
+                <li>What are the design differences between open-loop and closed-loop crusher feed control systems?</li>
+                <li>Which process parameter is the single most critical feedback link for crusher feed control loops, and why?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-charging-station"></i> 10. Motors, Starters & Variable Frequency Drives (VFD)</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a Direct-On-Line (DOL) starter, and what are its current/torque limitations?</li>
+                <li>What is a Star-Delta motor starter, and what internal power circuit transitions occur during acceleration?</li>
+                <li>Why is a Star-Delta starter selected over a standard DOL circuit for medium-sized motor frames?</li>
+                <li>What is safety electrical interlocking, and how do auxiliary contacts enforce it?</li>
+                <li>What is a reversing motor starter power circuit configuration?</li>
+                <li>What is a Variable Frequency Drive (VFD), and how does it regulate motor velocity?</li>
+                <li>How does a VFD maintain a constant Volts-per-Hertz ratio ($V/f$) during frequency adjustment?</li>
+                <li>What are the core technical advantages of using a VFD over standard mechanical throttling?</li>
+                <li>What is a Siemens SINAMICS G120 drive, and how do you interface its control unit over automation networks?</li>
+                <li>What parameters control the onboard relay outputs of a SINAMICS G120 drive system?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-user-shield"></i> 11. Functional Safety Systems</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a Safety Integrity Level (SIL), and how does it relate to risk frequency matrices?</li>
+                <li>What is an Emergency Shutdown System (ESD), and why must it be separated from basic process control?</li>
+                <li>What are the strict wiring and monitoring mandates for an Emergency Stop loop?</li>
+                <li>What is a process permissive constraint?</li>
+                <li>What is a process safety interlock?</li>
+                <li>What is the technical and logical difference between a permissive logic gate and an interlock condition?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-file-invoice"></i> 12. Engineering Design Documentation</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is a Functional Design Specification (FDS)?</li>
+                <li>What is a project Design Basis document, and why is it critical for sizing electrical frameworks?</li>
+                <li>How do you calculate cable sizes and prepare structural Cable Schedules for field networks?</li>
+                <li>What is an electrical Termination Plan, and how does it map wire junction terminals?</li>
+                <li>What is a field instrument Hook-Up drawing (Piping vs. Electrical interfaces)?</li>
+                <li>What details are mapped out inside a complete multi-point Loop Diagram?</li>
+                <li>What is a Cause and Effect Matrix, and how does it translate to safety interlock logic code?</li>
+            </ul>
+
+            <p><strong style="color: #3308d1;"><i class="fa-solid fa-gavel"></i> 13. International Electrical Standards Compliance</strong></p>
+            <ul style="list-style-type: square; padding-left: 20px; line-height: 1.8;">
+                <li>What is the international role of the IEC (International Electrotechnical Commission)?</li>
+                <li>What structural mandates does **IEC 61439** enforce for low-voltage switchgear and control assemblies?</li>
+                <li>What core guidelines does **IEC 60947** define for industrial low-voltage circuit switchgear devices?</li>
+                <li>What is the role of the International Society of Automation (ISA) standard library?</li>
+                <li>What specific mechanical test criteria must an enclosure satisfy to claim an **IP65 Ingress Rating**?</li>
+                <li>What is Hazardous Area Classification, and how do you analyze environmental gas or dust explosion risks?</li>
+                <li>What are the operational and presence boundary differences between Zone 0, Zone 1, and Zone 2 hazardous working areas?</li>
+            </ul>
+        </div>
                     </div>
                 </div>
 

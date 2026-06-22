@@ -1,3 +1,10 @@
+The visual styling issue in your layout happens because full-width elements inside a CSS grid container will expand correctly, but if a `.full-width-card` is placed directly beneath your 3-column system without an inner wrapper tweak, the text padding can look flat and stretched.
+
+Additionally, if these bottom modules are outside the `.knowledge-grid` div container in your HTML, they lack structural protection to keep them centered aligned with the top elements.
+
+Here is your complete, fully fixed **`control-panel.css`** code. I have added precise layout parameters to cleanly separate rows, reset any unwanted flex settings on text toggles, and enforce exact box alignment.
+
+```css
 /* --- CONTROL PANEL DESIGN PAGE STYLES --- */
 
 #panel-design-section {
@@ -5,6 +12,7 @@
     margin: 60px auto;
     padding: 0 20px;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 .section-heading {
@@ -28,6 +36,7 @@
     /* Increased min-width from 350px to 450px to force cards to be much wider */
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
     gap: 35px;
+    align-items: start; /* Prevents cards from stretching vertically down empty space */
 }
 
 /* Concept Cards */
@@ -38,6 +47,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border-top: 6px solid #3308d1; /* Primary theme color */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .concept-card:hover {
@@ -59,6 +69,13 @@
 }
 
 /* FAQ Grouping */
+.faq-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Adds balanced space between individual questions */
+}
+
 .faq-group p {
     font-weight: 700;
     margin-bottom: 15px;
@@ -84,6 +101,7 @@
     color: #333;
     cursor: pointer;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
 .concept-card .faq-toggle:hover {
@@ -95,21 +113,28 @@
 .faq-answer {
     font-size: 0.95rem;
     line-height: 1.6;
-    padding: 15px;
+    padding: 20px; /* Increased interior padding for long full-width answers */
     color: #555;
     background: #fff;
     border: 1px solid #f0f0f0;
     border-top: none;
     border-radius: 0 0 6px 6px;
-    margin-top: -10px;
+    margin-top: -12px;
     margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 /* --- FULL WIDTH UTILITY CLASS --- */
 /* Breaks complex data blocks out of the columns to span 100% grid width */
 .full-width-card {
     grid-column: 1 / -1 !important;
-    width: 100%;
+    width: 100% !important;
+    margin-top: 15px; /* Adds vertical padding to break away from the columns cleanly */
+}
+
+/* Fallback protection if full-width modules are kept outside the grid container */
+#panel-design-section > .full-width-card {
+    margin-bottom: 35px;
 }
 
 /* Responsive Mobile Adjustments */
@@ -122,4 +147,7 @@
     .section-heading { font-size: 2rem; }
     .knowledge-grid { grid-template-columns: 1fr; }
     .concept-card { padding: 20px; }
+    .full-width-card { margin-top: 0; }
 }
+
+```
