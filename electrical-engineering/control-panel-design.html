@@ -815,6 +815,170 @@
                         <p><strong>⭐ Scan Time :</strong>PLC scan time is the time required for a PLC to read inputs,
                             execute the program, and update outputs once.</p>
                     </div>
+                    <button class="faq-toggle">What is PLC Memory?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>⭐ Scan Time :</strong>PLC memory is the storage area where the PLC stores the
+                            operating system, user program, input/output status, timers, counters, data values, and
+                            system information. During every scan cycle, the PLC reads inputs, executes the program
+                            stored in memory, updates the outputs, and stores the required data in different memory
+                            areas.</p>
+                    </div>
+
+                    <button class="faq-toggle">What is PLC memory, what are its internal divisions, and how do Marker
+                        Memory and Data Blocks differ?</button>
+                    <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+                        <p><strong>💡 Best Answer:</strong></p>
+                        <p>PLC memory is the storage area where the PLC stores the operating system, user program,
+                            input/output status, timers, counters, data values, and system information. During every
+                            scan cycle, the PLC reads inputs, executes the program stored in memory, updates the
+                            outputs, and stores the required data in different memory areas.</p>
+
+                        <p><strong>🧠 1. TYPES OF PLC MEMORY (SIEMENS S7-1200)</strong></p>
+                        <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.8;">
+                            <li><b>Load Memory:</b> Stores the complete PLC program permanently. When I download a
+                                program from TIA Portal, it is stored in the Load Memory. If the PLC is restarted, the
+                                program remains available. (Example: Like the hard disk of a computer).</li>
+                            <li><b>Work Memory:</b> Work Memory is the RAM used by the PLC to execute the program during
+                                operation. The CPU copies the required program from Load Memory into Work Memory and
+                                executes it during every scan cycle. (Example: Like your computer's RAM).</li>
+                            <li><b>Retentive Memory:</b> Retentive Memory stores important values even after power is
+                                turned OFF. Examples: Production Counter, Total Running Hours, Recipe Data, Machine
+                                Parameters.</li>
+                            <li><b>System Memory:</b> System Memory stores CPU status information such as: First Scan
+                                Bit, Clock Memory, Diagnostic Information, System Flags. These are generated
+                                automatically by the PLC.</li>
+                        </ul>
+
+                        <p><strong>📊 2. MEMORY AREAS IN SIEMENS PLC</strong></p>
+                        <div style="overflow-x: auto;">
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 30%;">Memory Area</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 70%;">Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>I (Input)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Stores input status</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>Q (Output)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Stores output status</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>M (Marker)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Internal memory bits</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>DB (Data Block)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">User data storage</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>T (Timer)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Timer values</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;"><b>C (Counter)</b></td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Counter values</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><b>🔹 Input Memory (I) & Output Memory (Q) Examples:</b><br>
+                            • Inputs: I0.0 = Start Push Button, I0.1 = Stop Push Button, I0.2 = Emergency Stop. PLC
+                            reads all inputs first.<br>
+                            • Outputs: Q0.0 = Motor, Q0.1 = Solenoid Valve, Q0.2 = Alarm Lamp. PLC updates outputs after
+                            executing the program.</p>
+
+                        <p><b>🔹 Marker Memory (M):</b><br>
+                            Marker Memory is internal memory used for temporary storage. It is commonly used for
+                            intermediate logic, flags, latching, and internal conditions. Examples: M0.0 = Auto Mode,
+                            M0.1 = Pump Healthy, M0.2 = Alarm Reset.</p>
+
+                        <p><b>🔹 Data Block (DB):</b><br>
+                            Data Blocks are used to store user-defined data such as set points, pressure values,
+                            temperature values, production counts, and recipes. Example: DB1 (Pressure Setpoint = 8 Bar,
+                            Temperature = 45°C, Pump Runtime = 520 Hours).</p>
+
+                        <p><b>🔹 Timer & Counter Memory Examples:</b><br>
+                            • TON T1 = 5 Seconds (PLC stores timer value in memory).<br>
+                            • CTU C1 (Count Bottles, Current Count = 150).</p>
+
+                        <p><strong>🔄 3. PLC SCAN CYCLE AND MEMORY FLOW</strong></p>
+                        <p style="text-align: center; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                            Read Inputs → Input Memory Updated → Execute Program (Use Marker, DB, Timer, Counter Memory)
+                            → Update Output Memory → Outputs Energized
+                        </p>
+
+                        <p><strong>📋 RECRUITER TECHNICAL CRITERIA (QA LIST)</strong></p>
+
+                        <p><b>Q. What is Retentive Memory?</b><br>
+                            Answer: Retentive Memory retains values after power failure. Example: Machine produced 1000
+                            Parts → Power OFF → Power ON → Counter Still = 1000. (Non-Retentive Memory: Power OFF → Data
+                            Lost. Example: Temporary Timer Values).</p>
+
+                        <p><b>Q. Difference between Marker Memory and Data Block?</b></p>
+                        <div style="overflow-x: auto;">
+                            <table border="1"
+                                style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 50%;">Marker Memory</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd; width: 50%;">Data Block</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Temporary Logic</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Stores Process Data</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Internal Flags</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">User Variables</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Small Memory</td>
+                                        <td style="padding: 8px; border: 1px solid #ddd;">Large Structured Memory</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><b>Q. What is DB?</b><br>
+                            Answer: DB stands for Data Block. It stores user data that can be accessed by different
+                            parts of the PLC program. For example, pressure set points, temperature values, recipes, and
+                            production counters are commonly stored in Data Blocks.</p>
+
+                        <p><b>Q. Why do we use Marker Memory?</b><br>
+                            Answer: Marker Memory is used for internal logic where no physical input or output exists.
+                            It helps create flags, latching conditions, and intermediate control logic.</p>
+                    </div>
+                    <button class="faq-toggle">What is PLC-SCADA Integration?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>⭐ Scan Time :</strong>PLC-SCADA integration is the communication between a PLC and a
+                            SCADA system. The PLC performs real-time control of the machine or process, while the SCADA
+                            system monitors the process, displays information to the operator, stores historical data,
+                            generates alarms, and allows supervisory control.
+
+                            During my projects, I worked on verifying communication between the PLC and SCADA, checking
+                            tag mapping, testing alarms, monitoring process values, and confirming that field devices
+                            were correctly displayed on the SCADA screens during FAT and commissioning.</p>
+                    </div>
+                    <button class="faq-toggle">How does PLC communicate with SCADA?</button>
+                    <div class="faq-answer" style="display: none;">
+                        <p><strong>⭐ Scan Time :</strong>PLC and SCADA communicate using industrial communication
+                            protocols such as:
+                            <li>Profinet</li>
+                            <li>Modbus TCP</li>
+                            <li>OPC-UA</li>
+                            <li>Ethernet/IP</li>
+                            In Siemens-based systems, Profinet is commonly used for communication between the PLC, HMI,
+                            and engineering workstatio</p>
+                    </div>
                     <button class="faq-toggle">What are the different types of PLC I/O?</button>
                     <div class="faq-answer" style="display: none;">
                         <p>PLC I/O is the interface between the field and PLC. The PLC reads inputs (DI, AI) and
@@ -3105,6 +3269,171 @@
                                     side. This role at Techsol specifically excites me because it combines both —
                                     electrical design and hands-on PLC/HMI development — which aligns exactly with the
                                     direction I want to grow in."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What PLC programming
+                                work have you done??</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Sir, I have worked with Siemens S7-1200 PLC using TIA Portal. My primary
+                                    responsibilities included understanding the process, preparing I/O mapping,
+                                    developing and reviewing control logic, implementing motor interlocks, sequencing,
+                                    alarm handling, and testing the logic during FAT and commissioning.
+
+                                    In our projects, I worked on motor control, pump automation, VFD control, digital
+                                    and analog I/O integration, emergency stop logic, and communication with field
+                                    devices. I also performed online monitoring, troubleshooting, forcing I/Os during
+                                    testing, and verifying signals with the electrical team."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 Did you write PLC logic
+                                yourself?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Yes, sir. I developed PLC logic for small and medium automation projects such as
+                                    pump control, motor interlocking, auto/manual operation, level-based control, timer
+                                    functions, alarm generation, and VFD start/stop sequences using Ladder Logic in TIA
+                                    Portal.</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What PLC programming
+                                have you done?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"I have developed and practiced basic ladder logic programs for:
+
+                                    <li>Start/Stop</li>
+                                    <li>Auto/Manual mode</li>
+                                    <li>Motor Interlocking</li>
+                                    <li>Timer-based sequencing</li>
+                                    <li>Alarm generation</li>
+                                    <li>Analog input monitoring</li>
+                                    <li></li>VFD Start/Stop control</li>
+                                </p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 How do you prepare an
+                                I/O List</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Sir, I prepare the I/O list after studying the P&ID, control philosophy, electrical
+                                    drawings, and equipment list.
+
+                                    First, I identify all the field devices that need to communicate with the PLC, such
+                                    as push buttons, limit switches, proximity sensors, pressure transmitters, level
+                                    transmitters, temperature sensors, motors, solenoid valves, and alarms.
+
+                                    Then I classify each device as either a Digital Input (DI), Digital Output (DO),
+                                    Analog Input (AI), or Analog Output (AO).
+
+                                    After that, I assign PLC addresses according to the PLC hardware configuration and
+                                    prepare the I/O list in Excel. Finally, I cross-check the list with the electrical
+                                    drawings and the PLC engineer before wiring and programming."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What motor logic have
+                                you worked on?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"sir, the most basic PLC program I have worked with is motor Start/Stop logic.
+
+                                    The PLC receives the Start push button signal (Digital Input). If all interlocks are
+                                    healthy, such as the Emergency Stop not being pressed and the overload relay not
+                                    tripped, the PLC energizes the output connected to the contactor. The contactor
+                                    closes and the motor starts.
+
+                                    A latch (seal-in) circuit is used so the motor continues running after the Start
+                                    button is released. Pressing the Stop button or detecting a fault removes the output
+                                    signal, de-energizes the contactor, and stops the motor."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋Explain Auto/Manual
+                                mode.?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"In Manual mode, the operator starts and stops the motor using HMI or push buttons.
+
+                                    In Auto mode, the PLC controls the motor automatically based on process conditions
+                                    such as tank level, pressure, or timer settings.
+
+                                    For example, in a water tank application:
+
+                                    If the level falls below 30%, the PLC automatically starts the pump.
+                                    When the level reaches 90%, the PLC stops the pump.
+
+                                    The Auto/Manual selector switch is connected to a PLC input, and the program
+                                    executes the corresponding logic."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What is motor
+                                interlocking?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Motor interlocking prevents incorrect or unsafe operation.
+                                    Forward and Reverse motors cannot run together"</p>
+
+                            </div>
+
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What motor logic have
+                                you worked on?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Sir, the most basic PLC program I have worked with is motor Start/Stop logic.
+
+                                    The PLC receives the Start push button signal (Digital Input). If all interlocks are
+                                    healthy, such as the Emergency Stop not being pressed and the overload relay not
+                                    tripped, the PLC energizes the output connected to the contactor. The contactor
+                                    closes and the motor starts.
+
+                                    A latch (seal-in) circuit is used so the motor continues running after the Start
+                                    button is released. Pressing the Stop button or detecting a fault removes the output
+                                    signal, de-energizes the contactor, and stops the motor."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What is
+                                EMI/EMC?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"EMI = Electromagnetic Interference (the noise)
+                                    EMC = Electromagnetic Compatibility (the ability of equipment to operate correctly
+                                    in the presence of EMI)"</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 Data Acquisition System
+                                (DAQ)</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"A Data Acquisition System collects signals from sensors, converts them into digital
+                                    data, stores them, and sends them to SCADA or monitoring software for analysis and
+                                    diagnostics."</p>
+
+                            </div>
+                            <button class="faq-toggle" style="text-align: left; width: 100%;">📋 What is
+                                calibration?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Calibration is the process of comparing the sensor output with a known standard and
+                                    adjusting it so that it provides accurate measurements."</p>
+
+                            </div><button class="faq-toggle" style="text-align: left; width: 100%;">📋 What is signal
+                                conditioning?</button>
+                            <div class="faq-answer" style="display: none; text-align: left; padding: 25px;">
+
+                                <p><strong>Sample Answer:</strong></p>
+                                <p>"Signal conditioning is the process of converting, filtering, isolating, or
+                                    amplifying sensor signals so they can be accurately processed by the PLC or control
+                                    system."</p>
 
                             </div>
                         </div>
